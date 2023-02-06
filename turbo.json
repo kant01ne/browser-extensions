@@ -6,6 +6,10 @@
       "dependsOn": ["^build"],
       "outputs": ["dist/**", ".next/**"]
     },
+    "build:firefox": {
+      "dependsOn": ["^build:firefox"],
+      "outputs": ["dist/**"]
+    },
     "test": {
       "outputs": [""]
     },
@@ -17,6 +21,9 @@
       "outputs": []
     },
     "dev": {
+      "cache": false
+    },
+    "dev:firefox": {
       "cache": false
     }
   }

@@ -1,0 +1,10 @@
+{
+  "exclude": ["node_modules"],
+  "include": ["./**/*.ts", "./**/*.tsx"],
+  "compilerOptions": {
+    "paths": {
+      "~/*": ["./src/*"]
+    },
+    "baseUrl": "."
+  }
+}

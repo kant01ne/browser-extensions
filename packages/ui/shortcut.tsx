@@ -10,13 +10,19 @@ export const Shortcut: React.FC<
     }
 
     // Insert a + between each character except the last one.
-    return shortcut.split("").join("+").split("")
+    return shortcut
+      .replace(/Alt/g, "⌥")
+      .replace(/Command/g, "⌘")
+      .replace(/Shift/g, "⇧")
+      .replace(/\+/g, "")
+      .split("")
+      .join("+")
+      .split("")
   }, [shortcut])
 
   if (!shortcutArray) {
     return null
   }
-
   return (
     <span
       className={clsx(

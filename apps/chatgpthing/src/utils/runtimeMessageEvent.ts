@@ -1,4 +1,4 @@
-const RunTimeMessageTypeValues = ["ChatGPTWeb:browserActionClicked"] as const
+const RunTimeMessageTypeValues = ["ChatGPThing:browserActionClicked"] as const
 
 type RunTimeMessageType = (typeof RunTimeMessageTypeValues)[number]
 

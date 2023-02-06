@@ -1,4 +1,4 @@
-module.exports = {
+const rule = {
   create: function (context) {
     return {
       NewExpression: function (node) {
@@ -24,3 +24,5 @@ module.exports = {
     type: "problem"
   }
 }
+
+export default rule

@@ -12,7 +12,7 @@
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-sort-keys-fix": "^1.1.2",
-    "eslint-plugin-internal": "workspace:*"
+    "eslint-plugin-browser-extensions": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^4.7.4"

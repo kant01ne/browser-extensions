@@ -35,6 +35,8 @@ const handleActionClicked: Parameters<
   typeof browser.action.onClicked.addListener
 >[0] = async ({ id }) => toggleSpotlight(id)
 
-browser.action.onClicked.addListener(handleActionClicked)
+;(browser.action || browser.browserAction).onClicked.addListener(
+  handleActionClicked
+)
 
 browser.runtime.onInstalled.addListener(installListener)

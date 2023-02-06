@@ -10,7 +10,9 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "build:firefox": "turbo run build:firefox",
     "dev": "turbo run dev",
+    "dev:firefox": "turbo run dev:firefox",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "package": "turbo run package",

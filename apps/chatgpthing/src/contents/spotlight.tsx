@@ -37,7 +37,7 @@ function Spotlight() {
       }
 
       switch (event.data?.type) {
-        case "ChatGPTWeb:spotlight:toggle": {
+        case "ChatGPThing:spotlight:toggle": {
           setIsSpotlightOpen(!isSpotlightOpen)
           break
         }
@@ -59,7 +59,7 @@ function Spotlight() {
       window.removeEventListener("message", handleMessage)
       port.onMessage.addListener(handleMessage)
     }
-  }, [handleMessage])
+  }, [handleMessage, port.onMessage])
 
   return isSpotlightOpen ? (
     <SpotlightBoxContainer

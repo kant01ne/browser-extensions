@@ -1,6 +1,8 @@
 import { clsx } from "clsx"
 import React from "react"
 import { Shortcut } from "ui/shortcut"
+import { getBrowserNameFromNavigator } from "utils/getBrowserNameFromNavigator"
+import { getExtensionShortcutURL } from "utils/getExtensionShortcutURL"
 
 export const SpotlightFooter: React.FC<
   React.ComponentProps<"a"> & {
@@ -19,7 +21,7 @@ export const SpotlightFooter: React.FC<
         className
       )}
       {...props}
-      href={`chrome://extensions/shortcuts`}
+      href={getExtensionShortcutURL(getBrowserNameFromNavigator())}
       onClick={handleShortcutUpdate}>
       {shortcut ? (
         <>

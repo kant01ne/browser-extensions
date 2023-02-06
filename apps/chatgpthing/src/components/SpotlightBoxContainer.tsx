@@ -8,6 +8,7 @@ import { getDocumentTextFromDOM } from "@/utils/getDocumentTextFromDOM"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { clsx } from "clsx"
 import React from "react"
+import { getBrowserNameFromNavigator } from "utils/getBrowserNameFromNavigator"
 
 const placeholder = "Summarize this page."
 
@@ -65,7 +66,7 @@ export const SpotlightBoxContainer: React.FC<
       }
 
       switch (event.data?.type) {
-        case "ChatGPTWeb:spotlight:setAnswer": {
+        case "ChatGPThing:spotlight:setAnswer": {
           setAnswer(event.data.payload)
           break
         }
@@ -86,7 +87,7 @@ export const SpotlightBoxContainer: React.FC<
       window.removeEventListener("message", handleMessage)
       port.onMessage.addListener(handleMessage)
     }
-  }, [handleMessage])
+  }, [handleMessage, port.onMessage])
 
   /*
    * Render.
@@ -105,7 +106,9 @@ export const SpotlightBoxContainer: React.FC<
       handleClose={handleClose}
       handleShortcutUpdate={async (e) => {
         e.preventDefault()
-        await trpc.browser.openShortcutPage.mutate()
+        await trpc.browser.openShortcutPage.mutate({
+          browser: getBrowserNameFromNavigator()
+        })
       }}
       handleSubmit={(args) => getChatGPTAnswerMutation.mutate(args)}
       isAuthenticated={isAuthenticated}

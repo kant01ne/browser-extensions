@@ -11,7 +11,12 @@ module.exports = {
     "plugin:react/recommended"
   ],
   parser: "@typescript-eslint/parser",
-  plugins: ["@typescript-eslint", "sort-keys-fix", "react"], //, "internal"
+  plugins: [
+    "@typescript-eslint",
+    "sort-keys-fix",
+    "react",
+    "browser-extensions"
+  ], //, "internal"
   rules: {
     "@next/next/no-html-link-for-pages": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
@@ -21,8 +26,9 @@ module.exports = {
       { ignoreRestSiblings: true }
     ],
     "import/no-named-as-default-member": "off",
-    // "internal/no-new-storage": "error",
+    "browser-extensions/no-new-storage": "error",
     "no-console": "error",
+
     "no-debugger": "error",
     "no-restricted-imports": [
       "error",
@@ -35,6 +41,20 @@ module.exports = {
           }
         ],
         patterns: [".*"]
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      {
+        message:
+          "Do not use `React.useLayoutEffect` directly, use useIsomorphicLayoutEffect wrapper instead",
+        selector:
+          "MemberExpression[object.name='React'][property.name='useLayoutEffect']"
+      },
+      {
+        message:
+          'Do not use `replaceAll` in nextjs, use .replace(/-/g, " ") instead, see https://stackoverflow.com/questions/62940927/cant-use-replaceall-or-replace-with-nextjs-reactjs',
+        selector: "[property.name='replaceAll']"
       }
     ],
     "react/display-name": "off",

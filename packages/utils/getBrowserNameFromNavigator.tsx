@@ -1,16 +1,23 @@
-import { getWindow } from "./window"
+import { getWindow } from "~/window"
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/navigator
 
+export const getBrowserNameFromNavigatorTypeValues = [
+  "Firefox",
+  "Samsung Internet",
+  "Opera",
+  "Internet Explorer",
+  "Microsoft Edge (Legacy)",
+  "Edge",
+  "Chrome",
+  "Safari"
+] as const
+
+export type getBrowserNameFromNavigatorEventType =
+  (typeof getBrowserNameFromNavigatorTypeValues)[number]
+
 export const getBrowserNameFromNavigator = ():
-  | "Firefox"
-  | "Samsung Internet"
-  | "Opera"
-  | "Internet Explorer"
-  | "Microsoft Edge (Legacy)"
-  | "Edge"
-  | "Chrome"
-  | "Safari"
+  | getBrowserNameFromNavigatorEventType
   | undefined => {
   const { userAgent } = getWindow()?.navigator || {}
 

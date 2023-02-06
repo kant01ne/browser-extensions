@@ -1,12 +1,14 @@
 {
   "name": "chatgpthing",
   "displayName": "ChatGPThing",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Query ChatGPT in the context of the current page",
   "author": "kant01ne",
   "scripts": {
     "dev": "plasmo dev",
     "build": "plasmo build",
+    "build:firefox": "plasmo build --target=firefox",
+    "dev:firefox": "plasmo dev --target=firefox",
     "package": "plasmo package"
   },
   "dependencies": {

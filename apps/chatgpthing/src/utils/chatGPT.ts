@@ -176,7 +176,7 @@ export async function generateAnswers({
         port.postMessage({
           data: {
             payload: event.data.text,
-            type: "ChatGPTWeb:spotlight:setAnswer" satisfies ExtensionPostMessageEventType
+            type: "ChatGPThing:spotlight:setAnswer" satisfies ExtensionPostMessageEventType
           }
         })
         conversationID = event.data.conversationId

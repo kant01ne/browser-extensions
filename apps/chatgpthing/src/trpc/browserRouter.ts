@@ -1,6 +1,9 @@
 import { t } from "@/trpc"
 import { KEY_ACCESS_TOKEN } from "@/utils/chatGPT"
+import { getBrowserNameFromNavigatorTypeValues } from "utils/getBrowserNameFromNavigator"
+import { getExtensionShortcutURL } from "utils/getExtensionShortcutURL"
 import browser from "webextension-polyfill"
+import { z } from "zod"
 
 import { Storage as PlasmoStorage } from "@plasmohq/storage"
 
@@ -16,10 +19,11 @@ export const browserRouter = t.router({
       url: "https://chat.openai.com"
     })
   }),
-  openShortcutPage: t.procedure.mutation(async () => {
-    browser.tabs.create({
-      url: `chrome://extensions/shortcuts`
-      // https://support.mozilla.org/en-US/kb/manage-extension-shortcuts-firefox
+  openShortcutPage: t.procedure
+    .input(z.object({ browser: z.enum(getBrowserNameFromNavigatorTypeValues) }))
+    .mutation(async ({ input: { browser: browserAgent } }) => {
+      browser.tabs.create({
+        url: getExtensionShortcutURL(browserAgent)
+      })
     })
-  })
 })

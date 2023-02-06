@@ -1,8 +1,8 @@
 const ExtensionPostMessageEventTypeValues = [
-  "ChatGPTWeb:browserActionClicked",
-  "ChatGPTWeb:spotlight:show",
-  "ChatGPTWeb:spotlight:setAnswer",
-  "ChatGPTWeb:spotlight:toggle"
+  "ChatGPThing:browserActionClicked",
+  "ChatGPThing:spotlight:show",
+  "ChatGPThing:spotlight:setAnswer",
+  "ChatGPThing:spotlight:toggle"
 ] as const
 
 export type ExtensionPostMessageEventType =
@@ -14,26 +14,27 @@ export type ExtensionPostMessageEvent = {
     | {
         type: Exclude<
           ExtensionPostMessageEventType,
-          "ChatGPTWeb:spotlight:setAnswer"
+          "ChatGPThing:spotlight:setAnswer"
         >
       }
     | {
         type: Extract<
           ExtensionPostMessageEventType,
-          "ChatGPTWeb:spotlight:setAnswer"
+          "ChatGPThing:spotlight:setAnswer"
         >
         payload: string
       }
     | {
         type: Extract<
           ExtensionPostMessageEventType,
-          "ChatGPTWeb:spotlight:setText"
+          "ChatGPThing:spotlight:setText"
         >
         payload: string
       }
 }
 
 export function isExtensionPostMessageEvent(
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   event: any
 ): event is ExtensionPostMessageEvent {
   return ExtensionPostMessageEventTypeValues.includes(event.data?.type)

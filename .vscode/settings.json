@@ -1,0 +1,11 @@
+{
+  "eslint.workingDirectories": [{ "mode": "auto" }],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.validate": ["javascript"],
+  "editor.formatOnPaste": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "editor.acceptSuggestionOnEnter": "off",
+  "files.eol": "\n"
+}

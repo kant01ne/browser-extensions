@@ -96,7 +96,7 @@ export const SpotlightBoxContainer: React.FC<
     <SpotlightBox
       answer={answer}
       className={clsx(
-        "w-[25vw] max-h-[calc(100vh-10rem)] max-w-[18.5rem] top-20 right-16 fixed",
+        "w-[25vw] min-w-[224px] max-h-[calc(100vh-160px)] max-w-[296px] top-20 right-16 fixed",
         className
       )}
       handleAuthClick={async (e) => {

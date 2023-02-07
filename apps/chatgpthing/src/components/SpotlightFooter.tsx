@@ -13,7 +13,7 @@ export const SpotlightFooter: React.FC<
   return (
     <a
       className={clsx(
-        "text-[.65rem] text-center justify-center items-center flex flex-row",
+        "text-xs text-center justify-center items-center flex flex-row",
         {
           " text-slate-800 dark:text-slate-400": shortcut,
           "text-red-400 underline": !shortcut

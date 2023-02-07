@@ -42,9 +42,9 @@ export const Shortcut: React.FC<
         return (
           <span
             className={clsx(
-              "bg-slate-100 dark:bg-slate-800 flex border-slate-200 dark:border-slate-700 justify-center items-center border rounded-md border-width-2 px-1.5 p-0.5 min-w-[1.25rem]",
+              "bg-slate-100 dark:bg-slate-800 flex border-slate-200 dark:border-slate-700 justify-center items-center border rounded-md border-width-2 px-1.5 p-0.5 min-w-[20px]",
               {
-                "pr-[0.6rem]": "⌥" === char
+                "pr-[9.6px]": "⌥" === char
               }
             )}
             key={index}>

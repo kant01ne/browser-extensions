@@ -12,6 +12,7 @@ import React from "react"
 export const getStyle: PlasmoGetStyle = () => {
   const style = document.createElement("style")
   style.textContent = cssText
+
   return style
 }
 

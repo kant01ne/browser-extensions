@@ -1,7 +1,7 @@
 {
   "name": "chatgpthing",
   "displayName": "ChatGPThing",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Query ChatGPT in the context of the current page",
   "author": "kant01ne",
   "scripts": {

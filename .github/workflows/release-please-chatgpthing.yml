@@ -1,0 +1,20 @@
+on:
+  push:
+    branches:
+      - main
+name: release-please-chatgpthing
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/release-please-action@v3
+        with:
+          path: apps/chatgpthing
+          package-name: "chatgpthing"
+          changelog-path: "apps/chatgpthing/CHANGELOG.md"
+          version-file: "apps/chatgpthing/package.json"
+          release-type: node
+          monorepo-tags: true
+          pull-request-title-pattern: "chore${scope}: release blossom-lib ${version}"
+          token: ${{secrets.RELEASE_PLEASE_TOKEN}}
+          bump-minor-pre-major: true

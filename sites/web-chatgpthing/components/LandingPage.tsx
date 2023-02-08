@@ -52,11 +52,10 @@ export const LandingPage = () => {
         />
 
         <ParallaxLayer
-          className="flex items-center flex-col justify-between"
+          className="flex items-center flex-col justify-between pt-8"
           offset={4}
           speed={1}
           sticky={{ end: 5, start: 4 }}>
-          <span></span>
           <InstallHeader withDescription={true} />
           <SiteFooter />
         </ParallaxLayer>

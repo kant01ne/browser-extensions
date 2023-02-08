@@ -1,4 +1,6 @@
 import { extensionURLHash } from "@/components/useExtensionURL"
+import transparentLogo from "@/public/images/logo-transparent.png"
+import Image from "next/image"
 import Link from "next/link"
 import React from "react"
 import { Button } from "ui/button"
@@ -16,8 +18,16 @@ export const InstallHeader = ({
     onClick={(e) => {
       e.stopPropagation()
     }}>
-    <div className="my-16">
-      <h1 className="text-white text-4xl font-bold text-center">ChatGPThing</h1>
+    <div className="my-8 flex flex-col items-center justify-center">
+      <Image
+        alt="ChatGPThing Logo"
+        height={128}
+        src={transparentLogo}
+        width={128}
+      />
+      <h1 className="text-white mt-4 text-4xl font-bold text-center">
+        ChatGPThing
+      </h1>
       {withDescription ? (
         <SpotlightHeader className="text-white text-2xl mt-8" />
       ) : null}

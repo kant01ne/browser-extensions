@@ -8,6 +8,9 @@ import browser from "webextension-polyfill"
 
 const id = uuidv4()
 export const withTRPC = (Component: React.FC) => (): JSX.Element => {
+  /*
+   * States.
+   */
   const [queryClient] = React.useState(() => new QueryClient())
   const [port] = React.useState(() =>
     browser.runtime.connect({
@@ -20,12 +23,18 @@ export const withTRPC = (Component: React.FC) => (): JSX.Element => {
     })
   )
 
+  /*
+   * Effects.
+   */
   React.useEffect(() => {
     return () => {
       port.disconnect()
     }
   }, [port])
 
+  /*
+   * Render.
+   */
   return (
     <TRPCProvider port={port} queryClient={queryClient} trpc={trpc}>
       <QueryClientProvider client={queryClient}>

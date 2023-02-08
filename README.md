@@ -1,16 +1,31 @@
-# Turborepo starter
+# browser-extensions monorepo
 
-This is an official pnpm starter turborepo.
+This monorepo contains all the browser extensions I built and will build in the near future.
+
+It uses built using the incredible browser extension platform [Plasmo](https://plasmo.com). It uses [Next.js](https://nextjs.org/) for the landing page,[tailwind](https://tailwindcss.com/) and [shadcn/ui](https://github.com/shadcn/ui) components for the UI. The extension uses [trpc](https://trpc.io/) for Typesafe APIs with the help of [trpc-chrome](https://github.com/jlalmes/trpc-chrome).
+
+## Note on Performance
+
+> **Warning**
+> This monorepo serves as an example building one or multiple browser extensions.
+
+> If you see something broken, you can ping me [@kant01ne](https://twitter.com/kant01ne).
+
+## ChatGPThing
+
+Query ChatGPT in the context of the current page
+
+<video src="https://user-images.githubusercontent.com/5072452/216819491-ae457647-6465-4fb8-864c-193a92dc1b48.mp4"></video>
 
 ## What's inside?
 
-This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/apps:
+This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/sites/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
-- `ui`: a stub React component library shared by both `web` and `docs` applications
+- `sites/web-chatgpthing`: a [Next.js](https://nextjs.org/) app that contains the source code of the [ChatGPThing landing page](https://chatgpthing.vercel.app/)
+- `apps/chatgpthing`: A Browser extension that lets you query ChatGPT on any website with the context of the current page.
+- `packages/ui`: a stub React component library shared between the apps and websites.
 - `eslint-config-custom`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `tsconfig`: `tsconfig.json`s used throughout the monorepo
 
@@ -29,7 +44,7 @@ This turborepo has some additional tools already setup for you:
 To build all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd browser-extensions
 pnpm run build
 ```
 
@@ -38,7 +53,7 @@ pnpm run build
 To develop all apps and packages, run the following command:
 
 ```
-cd my-turborepo
+cd browser-extensions
 pnpm run dev
 ```
 

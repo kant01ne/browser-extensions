@@ -2,7 +2,7 @@
 
 Query ChatGPT in the context of the current page
 
-<video src="https://user-images.githubusercontent.com/5072452/216819491-ae457647-6465-4fb8-864c-193a92dc1b48.mp4">
+<video src="https://user-images.githubusercontent.com/5072452/216819491-ae457647-6465-4fb8-864c-193a92dc1b48.mp4"></video>
 
 ## Contribution
 

@@ -18,7 +18,7 @@ export const InstallHeader = ({
     onClick={(e) => {
       e.stopPropagation()
     }}>
-    <div className="my-8 flex flex-col items-center justify-center">
+    <div className="my-4 flex flex-col items-center justify-center">
       <Image
         alt="ChatGPThing Logo"
         height={128}

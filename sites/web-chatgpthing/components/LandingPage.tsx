@@ -46,7 +46,26 @@ export const LandingPage = () => {
           offset={0}
           speed={0}
           style={{
-            backgroundImage: "url('./stars.svg')",
+            backgroundImage: "url('./images/stars.svg')",
+            backgroundSize: "cover"
+          }}
+        />
+
+        <ParallaxLayer
+          offset={4.25}
+          speed={-0.2}
+          style={{
+            backgroundImage: "url('./images/sun.svg')",
+            backgroundSize: "cover",
+            marginLeft: "30%"
+          }}
+        />
+
+        <ParallaxLayer
+          offset={4}
+          speed={0}
+          style={{
+            backgroundImage: "url('./images/waves.svg')",
             backgroundSize: "cover"
           }}
         />

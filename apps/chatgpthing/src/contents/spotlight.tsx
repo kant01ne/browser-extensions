@@ -63,10 +63,7 @@ function Spotlight() {
   }, [handleMessage, port.onMessage])
 
   return isSpotlightOpen ? (
-    <SpotlightBoxContainer
-      className="accordion-up"
-      handleClose={() => setIsSpotlightOpen(false)}
-    />
+    <SpotlightBoxContainer handleClose={() => setIsSpotlightOpen(false)} />
   ) : null
 }
 

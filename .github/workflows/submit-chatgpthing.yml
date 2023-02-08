@@ -1,10 +1,9 @@
 name: "chatgpthing:release"
 
 on:
-  workflow_dispatch:
   push:
     tags:
-      - app-v[0-9]+.[0-9]+.[0-9]+
+      - chatgpthing-v[0-9]+.[0-9]+.[0-9]+
 jobs:
   build:
     timeout-minutes: 3

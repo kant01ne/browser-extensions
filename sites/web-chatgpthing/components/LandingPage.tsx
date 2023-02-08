@@ -88,7 +88,7 @@ export const LandingPage = () => {
         </ParallaxLayer>
 
         <ParallaxLayer
-          className="flex flex-row-reverse pt-4 pr-4 !h-10"
+          className="hidden md:flex flex-row-reverse pt-4 pr-4 !h-10"
           offset={0}
           sticky={{ end: 2.5, start: 0 }}>
           <Button className="w-16" variant="link">

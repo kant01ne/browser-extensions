@@ -6,7 +6,7 @@ export const SpotlightHeader: React.FC<
 > = ({ children, ...props }) => {
   return (
     <div {...props}>
-      <h1 className="w-[100%] text-base flex font-bold text-center items-center justify-center mb-4">
+      <h1 className="w-[100%] text-base flex text-center items-center justify-center mb-4">
         <Balancer>
           Query{" "}
           <span className="font-extrabold inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-rose-600">

@@ -8,7 +8,7 @@ import { cn } from "utils/cn"
 
 const fontSans = Sora({
   subsets: ["latin"],
-  variable: "--font-inter"
+  variable: "--font-sora"
 })
 
 interface RootLayoutProps {

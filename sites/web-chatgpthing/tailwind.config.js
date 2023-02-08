@@ -35,7 +35,7 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ["var(--font-inter)", ...fontFamily.sans]
+        sans: ["var(--font-sora)", ...fontFamily.sans]
       }
     }
   }

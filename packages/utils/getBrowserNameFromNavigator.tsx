@@ -1,4 +1,4 @@
-import { getWindow } from "~/window"
+import { getWindow } from "./window"
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Window/navigator
 

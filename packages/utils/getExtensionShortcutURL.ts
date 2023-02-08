@@ -1,4 +1,4 @@
-import type { getBrowserNameFromNavigator } from "~/getBrowserNameFromNavigator"
+import type { getBrowserNameFromNavigator } from "./getBrowserNameFromNavigator"
 
 export const getExtensionShortcutURL = (
   browser?: ReturnType<typeof getBrowserNameFromNavigator>

@@ -2,6 +2,8 @@ import * as SeparatorPrimitive from "@radix-ui/react-separator"
 import * as React from "react"
 import { cn } from "utils/cn"
 
+export const RADIX_SCROLL_AREA_SELECTOR = "[data-radix-scroll-area-viewport]"
+
 const Separator = React.forwardRef<
   React.ElementRef<typeof SeparatorPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>

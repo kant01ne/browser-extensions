@@ -25,8 +25,8 @@ module.exports = {
       "error",
       { ignoreRestSiblings: true }
     ],
-    "import/no-named-as-default-member": "off",
     "browser-extensions/no-new-storage": "error",
+    "import/no-named-as-default-member": "off",
     "no-console": "error",
 
     "no-debugger": "error",
@@ -39,8 +39,8 @@ module.exports = {
               "To reduce bundle size please use modularized imports: import maxBy from 'lodash-es/maxBy' instead.",
             name: "lodash-es"
           }
-        ],
-        patterns: [".*"]
+        ]
+        // patterns: [".*"]
       }
     ],
     "no-restricted-syntax": [

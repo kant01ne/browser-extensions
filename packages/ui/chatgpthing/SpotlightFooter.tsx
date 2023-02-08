@@ -1,8 +1,9 @@
 import { clsx } from "clsx"
 import React from "react"
-import { Shortcut } from "ui/shortcut"
 import { getBrowserNameFromNavigator } from "utils/getBrowserNameFromNavigator"
 import { getExtensionShortcutURL } from "utils/getExtensionShortcutURL"
+
+import { Shortcut } from "../shortcut"
 
 export const SpotlightFooter: React.FC<
   React.ComponentProps<"a"> & {
@@ -25,7 +26,7 @@ export const SpotlightFooter: React.FC<
       onClick={handleShortcutUpdate}>
       {shortcut ? (
         <>
-          <Shortcut className="px-2" shortcut={shortcut} /> to toggle this tool
+          <Shortcut className="px-2" shortcut={shortcut} /> to toggle
         </>
       ) : (
         "Add a keyboard shortcut to toggle this tool"

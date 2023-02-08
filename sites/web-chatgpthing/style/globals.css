@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ #parallax::-webkit-scrollbar {
+     width: 0.5rem;
+     background-color: transparent;
+ }
+
+ #parallax::-webkit-scrollbar-thumb {
+     background-color: rgba(153, 153, 153, 0.32);
+     border-radius: 0.25rem;
+     height: 20%;
+ }
+
+ #parallax::-webkit-scrollbar-thumb:hover {
+     background-color: rgba(153, 153, 153, 0.38);
+ }

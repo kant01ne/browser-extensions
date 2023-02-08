@@ -10,6 +10,7 @@
   ],
   "scripts": {
     "build": "turbo run build",
+    "ladle-serve": "turbo run ladle-serve",
     "build:firefox": "turbo run build:firefox",
     "dev": "turbo run dev",
     "dev:firefox": "turbo run dev:firefox",

@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
-import { SpotlightBox } from "@/components/SpotlightBox"
+import { SpotlightBox } from "./SpotlightBox"
 
-import "@/font.css"
-import "@/style.css"
+import "../style/font.css"
+import "../style/style.css"
 
 import type { Story } from "@ladle/react"
 import React from "react"
@@ -24,7 +24,7 @@ const LadleBase: React.FC<React.ComponentPropsWithoutRef<"div">> = ({
 const args = {
   answer:
     "This is a test answer. Go to [Google](https://google.com). Example code \n```npm install blob```\n",
-  className: "w-[25vw] max-h-[calc(100vh-10rem)] max-w-[18.5rem]",
+  className: "w-[25vw] max-h-[calc(100vh-12opx)] max-w-[18.5rem]",
   disabled: false,
   isAuthenticated: true,
   isLoading: false,
@@ -32,9 +32,6 @@ const args = {
 }
 
 const argTypes = {
-  handleChange: {
-    action: "handleChange"
-  },
   handleClose: {
     action: "handleClose"
   },
@@ -197,6 +194,21 @@ LongAnswer.argTypes = {
 }
 
 /*
+WithOnboardingTick.
+ */
+export const WithOnboardingTick = getTemplate()
+
+WithOnboardingTick.args = {
+  ...args,
+  answer: answer.slice(0, answer.length / 5),
+  isOnboarding: true
+}
+
+WithOnboardingTick.argTypes = {
+  ...argTypes
+}
+
+/*
  * MiddleAnswer.
  */
 export const MiddleAnswer = getTemplate()
@@ -220,6 +232,7 @@ export const StreamingAnswer: Story<
   const [answer, setAnswer] = React.useState("")
   React.useEffect(() => {
     const interval = setInterval(() => {
+      if (!defaultAnswer) return
       setAnswer((old) => defaultAnswer.slice(0, old.length + 8))
     }, 200)
     return () => clearInterval(interval)

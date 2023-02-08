@@ -3,42 +3,48 @@ import { clsx } from "clsx"
 import { Loader2 } from "lucide-react"
 import React from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
-import Balancer from "react-wrap-balancer"
-import { Button } from "ui/button"
-import { Textarea } from "ui/textarea"
 import { z } from "zod"
+
+import { Button } from "../button"
+import { Textarea } from "../textarea"
 
 const promptSchema = z.object({
   prompt: z.string()
 })
-const placeholder = "Summarize this page."
+
 type SpotlightFormData = z.infer<typeof promptSchema>
 
 export const SpotlightForm: React.FC<
   React.ComponentProps<"form"> & {
+    placeholder?: string
     handleAuthClick?: React.MouseEventHandler<HTMLAnchorElement>
     handleKeyDown?: React.KeyboardEventHandler<HTMLTextAreaElement>
-    handleSubmit?: SubmitHandler<{
+    handleSubmit: SubmitHandler<{
       prompt?: string
     }>
     isAuthenticated?: boolean
+    isDisabled?: boolean
+    isOnboarding?: boolean
     isLoading?: boolean
-    prompt?: string
+    defaultPrompt?: string
   }
 > = ({
   className,
+  placeholder = "Summarize this page.",
   handleAuthClick,
   handleKeyDown,
   handleSubmit,
   isAuthenticated,
+  isDisabled,
   isLoading,
-  prompt,
+  isOnboarding = false,
+  defaultPrompt,
   ...props
 }) => {
   const { handleSubmit: handleSubmitHook, register } =
     useForm<SpotlightFormData>({
       defaultValues: {
-        prompt: prompt || ""
+        prompt: defaultPrompt || ""
       },
       resolver: zodResolver(promptSchema)
     })
@@ -47,14 +53,11 @@ export const SpotlightForm: React.FC<
    * Render.
    */
   return (
-    <form
-      className={clsx("shrink-0", className)}
-      onSubmit={handleSubmitHook(handleSubmit)}
-      {...props}>
+    <form className={clsx("shrink-0", className)} {...props}>
       <Textarea
-        disabled={!isAuthenticated || isLoading}
+        disabled={!isAuthenticated || isLoading || isDisabled}
         onKeyDown={(e) => {
-          if (e.key === "Enter" && isAuthenticated) {
+          if (!e.shiftKey && e.key === "Enter" && isAuthenticated) {
             handleSubmitHook(handleSubmit)(e)
             e.preventDefault()
           }
@@ -67,16 +70,22 @@ export const SpotlightForm: React.FC<
 
       <div className="pt-4">
         <Button
-          className="w-full"
-          disabled={!isAuthenticated || isLoading}
-          type="submit"
+          className="w-full relative"
+          disabled={!isAuthenticated || isLoading || isDisabled}
+          onClick={handleSubmitHook(handleSubmit)}
           variant="outline">
+          {isOnboarding && !isLoading ? (
+            <span className="absolute top-[-4px] right-[-4px] flex h-3 w-3">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-3 w-3 bg-purple-500"></span>
+            </span>
+          ) : null}
           {isLoading ? <Loader2 className="mr-2 h-4 w-4 animate-spin" /> : null}
           Submit
         </Button>
       </div>
       {isAuthenticated === false ? (
-        <Balancer className="grow flex flex-col justify-center">
+        <div className="grow flex flex-col justify-center">
           <p className="text-base pt-4 text-center">
             Please login and pass Cloudflare check at{" "}
             <a
@@ -88,7 +97,7 @@ export const SpotlightForm: React.FC<
               chat.openai.com
             </a>
           </p>
-        </Balancer>
+        </div>
       ) : null}
     </form>
   )

@@ -24,7 +24,7 @@ export const withTRPC = (Component: React.FC) => (): JSX.Element => {
     return () => {
       port.disconnect()
     }
-  }, [])
+  }, [port])
 
   return (
     <TRPCProvider port={port} queryClient={queryClient} trpc={trpc}>

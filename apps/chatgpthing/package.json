@@ -12,7 +12,6 @@
     "package": "plasmo package"
   },
   "dependencies": {
-    "@hookform/resolvers": "^2.9.10",
     "@plasmohq/storage": "^1.0.0",
     "@radix-ui/react-scroll-area": "^1.0.2",
     "@radix-ui/react-separator": "^1.0.1",
@@ -25,13 +24,9 @@
     "eventsource-parser": "^0.1.0",
     "expiry-map": "^2.0.0",
     "lodash-es": "^4.17.21",
-    "lucide-react": "^0.108.0",
     "plasmo": "0.64.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-hook-form": "^7.43.0",
-    "react-markdown": "^8.0.5",
-    "react-wrap-balancer": "^0.4.0",
     "tailwind-merge": "^1.9.0",
     "tailwindcss-animate": "^1.0.5",
     "trpc-chrome": "^1.0.0",

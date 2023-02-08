@@ -12,7 +12,7 @@ export const SpotlightHeader: React.FC<
           <span className="font-extrabold inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-rose-600">
             chatGPT
           </span>{" "}
-          in the
+          in the{" "}
           <span className="inline-block text-transparent bg-clip-text bg-gradient-to-r from-sky-600 to-sky-400 font-extrabold">
             context
           </span>{" "}

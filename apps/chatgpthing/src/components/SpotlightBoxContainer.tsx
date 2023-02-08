@@ -18,7 +18,7 @@ export const SpotlightBoxContainer: React.FC<
   }
 > = ({ handleClose, className, ...props }) => {
   /*
-   * State
+   * State.
    */
   const [answer, setAnswer] = React.useState<string | undefined>(undefined)
 

@@ -1,7 +1,7 @@
 {
   "name": "chatgpthing",
   "displayName": "ChatGPThing",
-  "version": "0.0.4",
+  "version": "0.0.3",
   "description": "Query ChatGPT in the context of the current page",
   "author": "kant01ne",
   "scripts": {
@@ -77,7 +77,7 @@
       "<all_urls>"
     ],
     "commands": {
-      "_execute_browser_action": {
+      "_execute_action": {
         "suggested_key": {
           "windows": "Alt+Z",
           "mac": "Alt+Z",

@@ -78,6 +78,15 @@ export const LandingPage = () => {
           <InstallHeader withDescription={true} />
           <SiteFooter />
         </ParallaxLayer>
+
+        <ParallaxLayer
+          className="hidden md:block  lg:!ml-[-10%] !ml-[-20%] md:!w-[70%] lg:!w-[60%]"
+          offset={1.8}
+          speed={-0.5}
+          style={{ pointerEvents: "none" }}>
+          <Image alt="Demo" height={504} src={demo1} width={1007} />
+        </ParallaxLayer>
+
         <ParallaxLayer
           className="flex md:!w-[50%] md:ml-[50%] items-center flex-col justify-center"
           offset={2.6}
@@ -96,13 +105,6 @@ export const LandingPage = () => {
             prompt={prompt2}
             triggerSubmitAfter={false}
           />
-        </ParallaxLayer>
-        <ParallaxLayer
-          className="hidden md:block !ml-[-10%] md:!w-[70%] lg:!w-[60%]"
-          offset={1.8}
-          speed={-0.5}
-          style={{ pointerEvents: "none" }}>
-          <Image alt="Demo" height={504} src={demo1} width={1007} />
         </ParallaxLayer>
 
         <ParallaxLayer

@@ -2,19 +2,11 @@ on:
   push:
     branches:
       - main
-name: release-please-chatgpthing
+name: release-please
 jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
       - uses: google-github-actions/release-please-action@v3
         with:
-          path: apps/chatgpthing
-          package-name: "chatgpthing"
-          changelog-path: "CHANGELOG.md"
-          version-file: "package.json"
-          release-type: node
-          monorepo-tags: true
-          pull-request-title-pattern: "chore${scope}: release chatgpthing ${version}"
-          token: ${{secrets.RELEASE_PLEASE_TOKEN}}
-          bump-minor-pre-major: true
+          command: manifest

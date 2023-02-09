@@ -7,7 +7,10 @@ import { getDocumentTextFromDOM } from "@/utils/getDocumentTextFromDOM"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { clsx } from "clsx"
 import React from "react"
-import { SpotlightBox } from "ui/chatgpthing/SpotlightBox"
+import {
+  SpotlightBox,
+  SpotlightBoxContainerClassName
+} from "ui/chatgpthing/SpotlightBox"
 import { getBrowserNameFromNavigator } from "utils/getBrowserNameFromNavigator"
 
 const placeholder = "Summarize this page."
@@ -96,7 +99,8 @@ export const SpotlightBoxContainer: React.FC<
     <SpotlightBox
       answer={answer}
       className={clsx(
-        "w-[25vw] min-w-[248px] max-h-[calc(100vh-120px)] max-w-[296px] top-[60px] right-16 fixed",
+        SpotlightBoxContainerClassName,
+        "top-[60px] right-16 fixed",
         className
       )}
       handleAuthClick={async (e) => {

@@ -1,6 +1,9 @@
 import { clsx } from "clsx"
 import React from "react"
-import { SpotlightBox } from "ui/chatgpthing/SpotlightBox"
+import {
+  SpotlightBox,
+  SpotlightBoxContainerClassName
+} from "ui/chatgpthing/SpotlightBox"
 import { useInterval } from "usehooks-ts"
 
 const SpotlightBoxContainerBase: React.FC<
@@ -68,10 +71,7 @@ const SpotlightBoxContainerBase: React.FC<
   return (
     <SpotlightBox
       answer={answer}
-      className={clsx(
-        "relative w-[25vw] min-w-[248px] max-h-[calc(100vh-120px)] max-w-[296px]",
-        className
-      )}
+      className={clsx("relative", SpotlightBoxContainerClassName, className)}
       defaultPrompt={prompt}
       handleShortcutUpdate={async (e) => {
         e.preventDefault()

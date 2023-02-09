@@ -30,7 +30,7 @@ module.exports = {
       lg: ["20px", "28px"],
       sm: ["14px", "20px"],
       xl: ["24px", "32px"],
-      xs: ["10px", "14px"]
+      xs: ["12px", "14px"]
     },
     spacing: {
       // Convert all to pixels knowing that 1 = 4px

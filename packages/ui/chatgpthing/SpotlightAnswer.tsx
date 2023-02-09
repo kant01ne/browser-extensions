@@ -57,33 +57,40 @@ export const SpotlightAnswer: React.FC<
     }
   }, [hasAnswer, hasScrolledUpManually])
 
-  if (!answer || !answer.length) return null
   /*
    * Render.
    */
   return (
     <section {...props}>
-      <div className="relative flex flex-col justify-center bg-slate-50 dark:bg-slate-800 rounded-lg text-left">
+      <div className="relative flex flex-col justify-center  bg-slate-50 dark:bg-slate-800 rounded-lg text-left">
         <div className="flex flex-col">
-          <Button
-            className={clsx(
-              " rounded-r-lg rounded-b-[0] rounded-l-[0]  border-t-2 border-r-2 rounded-[0] bg-slate-50 dark:bg-slate-800 h-6 focus:ring-[0px] text-[0.75rem] focus:ring-offset-0 z-[2] w-[4rem] self-end",
-              {
-                "border-green-400": copiedToClipboard,
-                "border-sky-400": !copiedToClipboard
-              }
-            )}
-            onClick={() => {
-              navigator.clipboard.writeText(answer).catch(() => {})
-              setCopiedToClipboard(true)
-              setTimeout(() => {
-                setCopiedToClipboard(false)
-              }, 3000)
-            }}
-            size="sm"
-            variant="ghost">
-            {copiedToClipboard ? "Copied" : "Copy"}
-          </Button>
+          <div className="flex justify-between align-top">
+            <span className="px-2 w-[64px] flex text-xs italic underline underline-offset-4 items-center justify-center h-8 mt-[1px]">
+              ChatGPT
+            </span>
+
+            <Button
+              className={clsx(
+                " rounded-r-lg rounded-b-[0] rounded-l-[0]  border-t-2 border-r-2 rounded-[0] bg-slate-50 dark:bg-slate-800 h-8 focus:ring-[0px] text-xs focus:ring-offset-0 w-[64px]",
+                {
+                  "border-green-400": copiedToClipboard,
+                  "border-sky-400": !copiedToClipboard
+                }
+              )}
+              onClick={() => {
+                if (!answer) return
+
+                navigator.clipboard.writeText(answer).catch(() => {})
+                setCopiedToClipboard(true)
+                setTimeout(() => {
+                  setCopiedToClipboard(false)
+                }, 3000)
+              }}
+              size="sm"
+              variant="ghost">
+              {copiedToClipboard ? "Copied" : "Copy"}
+            </Button>
+          </div>
           <section
             id="spotlight-text"
             style={{
@@ -96,12 +103,20 @@ export const SpotlightAnswer: React.FC<
               textOverflow: "ellipsis"
             }}>
             <ScrollArea
-              className="max-h-[23vh] flex flex-col"
+              className="min-h-[15vh] max-h-[23vh] flex flex-col"
               ref={scrollAreaRef}
               type="always">
-              <ReactMarkdown className="dark:text-slate-100 dark:prose-invert prose [&>pre::-webkit-scrollbar]:!none max-w-prose prose-sm pt-2 pb-2 px-2">
-                {answer}
-              </ReactMarkdown>
+              {answer ? (
+                <ReactMarkdown className="dark:text-slate-100 dark:prose-invert prose [&>pre::-webkit-scrollbar]:!none max-w-prose prose-sm pt-2 pb-2 px-2">
+                  {answer}
+                </ReactMarkdown>
+              ) : (
+                <div className="min-h-[15vh] w-full flex justify-center items-center">
+                  <div className="text-sm text-slate-400">
+                    Nothing here yet...
+                  </div>
+                </div>
+              )}
             </ScrollArea>
           </section>
         </div>

@@ -82,8 +82,9 @@ export const LandingPage = () => {
 
         <ParallaxLayer
           className="flex md:!w-[50%] md:ml-[50%] items-center flex-col justify-center"
-          offset={2.6}
-          speed={0.3}>
+          offset={2.2}
+          speed={1}
+          sticky={{ end: 3, start: 2.4 }}>
           <SpotlightBoxContainer
             defaultAnswer={defaultAnswer2}
             isDisabled={false}

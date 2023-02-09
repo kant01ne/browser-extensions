@@ -29,7 +29,7 @@ export const InstallHeader = ({
         ChatGPThing
       </h1>
       {withDescription ? (
-        <SpotlightHeader className="text-white text-2xl mt-8" />
+        <SpotlightHeader className="text-white text-2xl mt-8 px-8" />
       ) : null}
     </div>
     <Button className="w-56">

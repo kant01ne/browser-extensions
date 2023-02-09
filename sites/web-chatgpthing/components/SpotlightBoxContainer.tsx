@@ -24,7 +24,7 @@ const SpotlightBoxContainerBase: React.FC<
   isDisabled,
   onSetAnswer,
   prompt,
-  triggerSubmitAfter = 2000,
+  triggerSubmitAfter = 1000,
   ...props
 }) => {
   /*

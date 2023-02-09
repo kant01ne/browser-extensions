@@ -65,7 +65,7 @@ export const SpotlightAnswer: React.FC<
       <div className="relative flex flex-col justify-center  bg-slate-50 dark:bg-slate-800 rounded-lg text-left">
         <div className="flex flex-col">
           <div className="flex justify-between align-top">
-            <span className="px-2 w-[64px] flex text-xs italic underline underline-offset-4 items-center justify-center h-8 mt-[1px]">
+            <span className="px-2 flex text-xs italic underline underline-offset-4 items-center justify-center h-8 mt-[1px]">
               ChatGPThing
             </span>
 

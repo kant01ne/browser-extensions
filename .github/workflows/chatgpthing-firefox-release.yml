@@ -29,11 +29,8 @@ jobs:
         run: pnpm build --filter=./apps/chatgpthing
       - name: Package the extension into a zip artifact for chrome
         run: pnpm package --filter=./apps/chatgpthing
-      # - name: Package the extension into a zip artifact for firefox
-      #   run: pnpm build:firefox -- --zip --filter=./apps/chatgpthing
       - name: Browser Platform Publish
         uses: PlasmoHQ/bpp@v3
         with:
           keys: ${{ secrets.CHATGPTHING_CHROME_KEYS }}
           chrome-file: apps/chatgpthing/build/chrome-mv3-prod.zip
-          # firefox-file: apps/chatgpthing/build/firefox-prod.zip

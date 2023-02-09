@@ -11,7 +11,7 @@ import { SpotlightHeader } from "./SpotlightHeader"
 
 // Shared base styles bu not applied directly to the component as we want to control its size from the containers.
 export const SpotlightBoxContainerClassName =
-  "w-[25vw] min-w-[320px] max-h-[calc(100vh-120px)] max-w-[420px]"
+  "w-[90vw] md:w-[50vw] w-[25vw] min-w-[320px] max-h-[calc(100vh-120px)] max-w-[420px]"
 
 export const SpotlightBox: React.FC<
   React.ComponentProps<"div"> &

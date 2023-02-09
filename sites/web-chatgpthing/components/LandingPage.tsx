@@ -2,16 +2,13 @@
 
 import { SiteFooter } from "@/components/Footer"
 import { InstallHeader } from "@/components/InstallHeader"
+import { InstallLogoHeader } from "@/components/InstallLogoHeader"
 import { SpotlightBoxContainer } from "@/components/SpotlightBoxContainer"
-import { extensionURLHash, useExtensionURL } from "@/components/useExtensionURL"
+import { useExtensionURL } from "@/components/useExtensionURL"
 import demo1 from "@/public/images/demo1.png"
 import { IParallax, Parallax, ParallaxLayer } from "@react-spring/parallax"
 import Image from "next/image"
-import Link from "next/link"
 import React from "react"
-import { Button } from "ui/button"
-import { ChromeLogo } from "ui/logo/ChromeLogo"
-import { FirefoxLogo } from "ui/logo/FirefoxLogo"
 
 const prompt1 = "So... what are you exactly?"
 const prompt2 =
@@ -28,7 +25,7 @@ export const LandingPage = () => {
    */
   const defaultAnswer1 = React.useMemo(
     () =>
-      `I'm [ChatGPThing](${extensionURL}), I'm a browser extension that uses GPT-3 to answer questions about the page you're on. Once you've installed me, you can ask me questions about the page you're on by clicking the ChatGPThing icon in your browser's toolbar or by pressing the shortcut key (Alt+Z by default).`,
+      `I'm [ChatGPThing](${extensionURL}), I'm a browser extension that uses ChatGPT to answer questions about the page you're on. Install for free, and use the shortcut key to toggle this popup on any page (Alt+Z by default).`,
     [extensionURL]
   )
 
@@ -48,12 +45,12 @@ export const LandingPage = () => {
         />
 
         <ParallaxLayer
-          offset={4.25}
+          className="!w-[120%] !ml-[-20%] md:!w-[100%] md:!ml-[30%] "
+          offset={4.125}
           speed={-0.2}
           style={{
             backgroundImage: "url('./images/sun.svg')",
-            backgroundSize: "cover",
-            marginLeft: "30%"
+            backgroundSize: "cover"
           }}
         />
 
@@ -107,21 +104,7 @@ export const LandingPage = () => {
           className="hidden md:flex flex-row-reverse pt-4 pr-4 !h-10"
           offset={0}
           sticky={{ end: 2.5, start: 0 }}>
-          <Button className="w-16" variant="link">
-            <Link href={extensionURLHash["Firefox"]} target="_blank">
-              <span>
-                <FirefoxLogo height={32} width={32} />
-              </span>
-            </Link>
-          </Button>
-
-          <Button className="w-16" variant="link">
-            <Link href={extensionURLHash["Chrome"]} target="_blank">
-              <span>
-                <ChromeLogo height={32} width={32} />
-              </span>
-            </Link>
-          </Button>
+          <InstallLogoHeader />
         </ParallaxLayer>
 
         <ParallaxLayer

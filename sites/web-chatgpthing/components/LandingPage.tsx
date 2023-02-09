@@ -36,11 +36,7 @@ export const LandingPage = () => {
   const parallax = React.useRef<IParallax>(null!)
   return (
     <div className="flex justify-center flex-col h-[100vh] max-w-screen-lg">
-      <Parallax
-        className="bg-gradient-to-r from-fuchsia-900 to-pink-900"
-        id="parallax"
-        pages={5}
-        ref={parallax}>
+      <Parallax className="" id="parallax" pages={5} ref={parallax}>
         <ParallaxLayer
           factor={5}
           offset={0}

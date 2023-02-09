@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-    background-color: #701a75;
-}
-
  #parallax::-webkit-scrollbar {
      width: 0.5rem;
      background-color: transparent;

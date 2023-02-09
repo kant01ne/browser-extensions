@@ -19,7 +19,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html
       className={cn(
-        "bg-white font-sans text-slate-900 antialiased",
+        "bg-gradient-to-r from-fuchsia-900 to-pink-900 font-sans text-slate-900 antialiased",
         fontSans.variable
       )}
       lang="en">

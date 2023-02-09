@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/kant01ne/browser-extensions/compare/chatgpthing-v0.0.4...chatgpthing-v0.0.5) (2023-02-09)
+
+
+### Reverts
+
+* **chatgpthing:** workaround - add _browser to package.json for shortcut withD mv2 firefox ([5e169af](https://github.com/kant01ne/browser-extensions/commit/5e169af79e510b29fb2ec956f64d724810244411))
+
 ## [0.0.4](https://github.com/kant01ne/browser-extensions/compare/chatgpthing-v0.0.3...chatgpthing-v0.0.4) (2023-02-09)
 
 

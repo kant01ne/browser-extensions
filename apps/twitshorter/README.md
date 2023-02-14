@@ -2,7 +2,7 @@
 
 Long tweets summarizer
 
-<video src="hhttps://user-images.githubusercontent.com/5072452/218632182-9fb7eeba-d238-44ad-ae86-1c816c387ba7.mp4"></video>
+<video src="https://user-images.githubusercontent.com/5072452/218632182-9fb7eeba-d238-44ad-ae86-1c816c387ba7.mp4"></video>
 
 ## Contribution
 

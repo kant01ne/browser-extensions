@@ -3,7 +3,6 @@ import React from "react"
 
 import "@/style/globals.css"
 
-import { Analytics } from "@/components/analytics"
 import { cn } from "utils/cn"
 
 const fontSans = Sora({
@@ -24,10 +23,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
       )}
       lang="en">
       <head />
-      <body className="min-h-screen">
-        {children}
-        <Analytics />
-      </body>
+      <body className="min-h-screen">{children}</body>
     </html>
   )
 }

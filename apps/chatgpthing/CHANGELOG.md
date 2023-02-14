@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/kant01ne/browser-extensions/compare/chatgpthing-v0.1.0...chatgpthing-v0.1.1) (2023-02-14)
+
+
+### Bug Fixes
+
+* **twitshorter:** fix icon ([6068d2c](https://github.com/kant01ne/browser-extensions/commit/6068d2c4aab9a25083b453f903fb0198a24d026d))
+
 ## [0.1.0](https://github.com/kant01ne/browser-extensions/compare/chatgpthing-v0.0.4...chatgpthing-v0.1.0) (2023-02-14)
 
 

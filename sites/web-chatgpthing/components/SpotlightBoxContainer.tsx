@@ -27,6 +27,7 @@ const SpotlightBoxContainerBase: React.FC<
   defaultAnswer,
   initialIntervalDelay = 300,
   isDisabled,
+  isOnboarding,
   onSetAnswer,
   prompt,
   triggerSubmitAfter = 1000,
@@ -85,6 +86,7 @@ const SpotlightBoxContainerBase: React.FC<
       <SpotlightHeader />
       <SpotlightAnswer answer={answer} />
       <SpotlightForm
+        isOnboarding={isOnboarding}
         defaultPrompt={prompt}
         handleSubmit={handleSubmit}
         isAuthenticated={true}

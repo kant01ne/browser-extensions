@@ -1,9 +1,6 @@
 import { t } from "@/trpc"
-import {
-  KEY_ACCESS_TOKEN,
-  generateAnswers,
-  getAccessToken
-} from "@/utils/chatGPT"
+import { generateAnswers, generateAnswersController } from "@/utils/chatGPT"
+import { KEY_ACCESS_TOKEN, getAccessToken } from "chatgpt/chatGPT"
 import type browser from "webextension-polyfill"
 import { z } from "zod"
 
@@ -24,6 +21,10 @@ export const chatGPTRouter = t.router({
         return {
           error: err.message
         }
+      }
+
+      if (generateAnswersController) {
+        generateAnswersController.abort()
       }
 
       return generateAnswers({

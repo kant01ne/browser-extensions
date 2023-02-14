@@ -1,4 +1,4 @@
-import { useTRPC } from "@/components/trpc/withTRPC"
+import { useTRPC } from "@/trpc/withTRPC"
 import {
   ExtensionPostMessageEvent,
   isExtensionPostMessageEvent
@@ -7,10 +7,16 @@ import { getDocumentTextFromDOM } from "@/utils/getDocumentTextFromDOM"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { clsx } from "clsx"
 import React from "react"
+import { ChatGPTAuth } from "ui/chatgpt/ChatGPTAuth"
+import { SpotlightAnswer } from "ui/chatgpthing/SpotlightAnswer"
 import {
   SpotlightBox,
   SpotlightBoxContainerClassName
 } from "ui/chatgpthing/SpotlightBox"
+import { SpotlightFooter } from "ui/chatgpthing/SpotlightFooter"
+import { SpotlightForm } from "ui/chatgpthing/SpotlightForm"
+import { SpotlightHeader } from "ui/chatgpthing/SpotlightHeader"
+import { Separator } from "ui/separator"
 import { getBrowserNameFromNavigator } from "utils/getBrowserNameFromNavigator"
 
 const placeholder = "Summarize this page."
@@ -103,22 +109,34 @@ export const SpotlightBoxContainer: React.FC<
         "top-[60px] right-16 fixed",
         className
       )}
-      handleAuthClick={async (e) => {
-        e.preventDefault()
-        await trpc.browser.openOpenAIAuthPage.mutate()
-      }}
       handleClose={handleClose}
-      handleShortcutUpdate={async (e) => {
-        e.preventDefault()
-        await trpc.browser.openShortcutPage.mutate({
-          browser: getBrowserNameFromNavigator()
-        })
-      }}
-      handleSubmit={(args) => getChatGPTAnswerMutation.mutate(args)}
-      isAuthenticated={isAuthenticated}
-      isLoading={getChatGPTAnswerMutation.isLoading}
-      shortcut={browserCommand?.[0]?.shortcut}
-      {...props}
-    />
+      {...props}>
+      <SpotlightHeader />
+      <SpotlightAnswer answer={answer} />
+      <SpotlightForm
+        handleSubmit={(args) => getChatGPTAnswerMutation.mutate(args)}
+        isAuthenticated={isAuthenticated}
+        isLoading={getChatGPTAnswerMutation.isLoading}
+      />
+      <ChatGPTAuth
+        className="mt-4"
+        handleAuthClick={async (e) => {
+          e.preventDefault()
+          await trpc.browser.openOpenAIAuthPage.mutate()
+        }}
+        isAuthenticated={isAuthenticated}
+      />
+      <Separator className="mt-4 mb-2" />
+      <SpotlightFooter
+        className="px-2 py-0.5 "
+        handleShortcutUpdate={async (e) => {
+          e.preventDefault()
+          await trpc.browser.openShortcutPage.mutate({
+            browser: getBrowserNameFromNavigator()
+          })
+        }}
+        shortcut={browserCommand?.[0]?.shortcut}
+      />
+    </SpotlightBox>
   )
 }

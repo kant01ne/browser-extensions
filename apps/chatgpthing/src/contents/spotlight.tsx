@@ -1,5 +1,5 @@
 import { SpotlightBoxContainer } from "@/components/SpotlightBoxContainer"
-import { useTRPC, withTRPC } from "@/components/trpc/withTRPC"
+import { useTRPC, withTRPC } from "@/trpc/withTRPC"
 import {
   ExtensionPostMessageEvent,
   isExtensionPostMessageEvent

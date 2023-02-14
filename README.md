@@ -17,6 +17,12 @@ Query ChatGPT in the context of the current page
 
 <video src="https://user-images.githubusercontent.com/5072452/216819491-ae457647-6465-4fb8-864c-193a92dc1b48.mp4"></video>
 
+## TwitShorter
+
+Long tweets summarizer
+
+<video src="hhttps://user-images.githubusercontent.com/5072452/218632182-9fb7eeba-d238-44ad-ae86-1c816c387ba7.mp4"></video>
+
 ## What's inside?
 
 This turborepo uses [pnpm](https://pnpm.io) as a package manager. It includes the following packages/sites/apps:

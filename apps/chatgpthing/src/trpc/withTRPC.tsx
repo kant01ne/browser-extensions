@@ -1,4 +1,4 @@
-import type { AppRouter } from "@/background"
+import type { AppRouter } from "@/trpc/router"
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
 import { createTRPCProxyClient } from "@trpc/client"
 import React from "react"

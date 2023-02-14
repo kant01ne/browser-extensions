@@ -1,7 +1,7 @@
 /* eslint-disable no-restricted-globals */
 import React from "react"
 
-const useScrollPosition = (): number => {
+export const useScrollPosition = (): number => {
   const [scrollPosition, setScrollPosition] = React.useState(0)
 
   React.useEffect(() => {
@@ -16,5 +16,3 @@ const useScrollPosition = (): number => {
 
   return scrollPosition
 }
-
-export default useScrollPosition

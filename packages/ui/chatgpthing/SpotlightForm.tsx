@@ -17,7 +17,6 @@ type SpotlightFormData = z.infer<typeof promptSchema>
 export const SpotlightForm: React.FC<
   React.ComponentProps<"form"> & {
     placeholder?: string
-    handleAuthClick?: React.MouseEventHandler<HTMLAnchorElement>
     handleKeyDown?: React.KeyboardEventHandler<HTMLTextAreaElement>
     handleSubmit: SubmitHandler<{
       prompt?: string
@@ -31,7 +30,6 @@ export const SpotlightForm: React.FC<
 > = ({
   className,
   placeholder = "Summarize this page.",
-  handleAuthClick,
   handleKeyDown,
   handleSubmit,
   isAuthenticated,
@@ -84,21 +82,6 @@ export const SpotlightForm: React.FC<
           Submit
         </Button>
       </div>
-      {isAuthenticated === false ? (
-        <div className="grow flex flex-col justify-center">
-          <p className="text-base pt-4 text-center">
-            Please login and pass Cloudflare check at{" "}
-            <a
-              className="text-sky-400"
-              href="https://chat.openai.com"
-              onClick={handleAuthClick}
-              rel="noreferrer"
-              target="_blank">
-              chat.openai.com
-            </a>
-          </p>
-        </div>
-      ) : null}
     </form>
   )
 }

@@ -87,7 +87,7 @@ export const extensionListConfig: Record<extensionListType, ExtensionConfig> = {
       youtube: "https://www.youtube.com/embed/fsQeWjex0Xg",
 
       github:
-        "https://github.com/kant01ne/browser-extensions/tree/main/apps/chatgpthing",
+        "https://github.com/kant01ne/browser-extensions/tree/main/apps/twitshorter",
       twitter: "https://twitter.com/kant01ne"
     },
     name: "TwitShorter",

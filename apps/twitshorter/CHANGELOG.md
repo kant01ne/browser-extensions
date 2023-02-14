@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/kant01ne/browser-extensions/compare/twitshorter-v0.0.4...twitshorter-v0.0.5) (2023-02-14)
+
+
+### Bug Fixes
+
+* **twitshorter:** fix icon ([6068d2c](https://github.com/kant01ne/browser-extensions/commit/6068d2c4aab9a25083b453f903fb0198a24d026d))
+
 ## [0.0.4](https://github.com/kant01ne/browser-extensions/compare/twitshorter-v0.0.1...twitshorter-v0.0.4) (2023-02-14)
 
 

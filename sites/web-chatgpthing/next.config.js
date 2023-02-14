@@ -2,9 +2,16 @@ module.exports = {
   experimental: {
     appDir: true
   },
-  images: {
-    domains: ["awv3node-homepage.surge.sh"]
-  },
+  images: {},
   reactStrictMode: true,
-  transpilePackages: ["ui"]
+  transpilePackages: ["ui"],
+  redirects() {
+    return [
+      {
+        destination: "https://browser-apps.vercel.app/chatgpthing",
+        permanent: false,
+        source: `/`
+      }
+    ]
+  }
 }

@@ -1,11 +1,11 @@
-import { siteConfig } from "@/config/extensionList"
+import { extensionListConfig } from "@/config/extensionList"
 import Link from "next/link"
 import React from "react"
 
 export function SiteFooter({
   browserExtensionSlug
 }: {
-  browserExtensionSlug: keyof typeof siteConfig
+  browserExtensionSlug: keyof typeof extensionListConfig
 }) {
   return (
     <footer className="container  text-slate-50">
@@ -15,7 +15,7 @@ export function SiteFooter({
             Built by{" "}
             <a
               className="font-medium underline underline-offset-4"
-              href={siteConfig[browserExtensionSlug].links.twitter}
+              href={extensionListConfig[browserExtensionSlug].links.twitter}
               rel="noreferrer"
               target="_blank">
               kant01ne
@@ -27,7 +27,7 @@ export function SiteFooter({
           The source code is available on{" "}
           <Link
             className="font-medium underline underline-offset-4"
-            href={siteConfig[browserExtensionSlug].links.github}
+            href={extensionListConfig[browserExtensionSlug].links.github}
             rel="noreferrer"
             target="_blank">
             GitHub

@@ -1,5 +1,5 @@
 import chatGPThingLogo from "@/public/images/logo/chatgpthing.png"
-import twitShorterLogo from "@/public/images/logo/twitShorter.png"
+import twitShorterLogo from "@/public/images/logo/twitshorter.png"
 import type { StaticImageData } from "next/image"
 import colors from "tailwindcss/colors"
 

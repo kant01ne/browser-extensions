@@ -363,7 +363,6 @@ importers:
     specifiers:
       '@babel/core': ^7.0.0
       '@next/font': ^13.1.6
-      '@react-spring/parallax': ^9.6.1
       '@tailwindcss/aspect-ratio': ^0.4.2
       '@tailwindcss/typography': ^0.5.9
       '@types/node': ^17.0.12
@@ -371,7 +370,6 @@ importers:
       '@types/react-dom': ^18.0.7
       '@vercel/analytics': ^0.1.8
       autoprefixer: ^10.4.13
-      chatgpthing: workspace:*
       clsx: ^1.2.1
       eslint: 7.32.0
       eslint-config-custom: workspace:*
@@ -389,10 +387,8 @@ importers:
       utils: workspace:*
     dependencies:
       '@next/font': 13.1.6
-      '@react-spring/parallax': 9.6.1_biqbaboplfbrettd7655fr4n2y
       '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
       '@vercel/analytics': 0.1.8_react@18.2.0
-      chatgpthing: link:../../apps/chatgpthing
       clsx: 1.2.1
       next: 13.1.6_pjwopsidmaokadturxaafygjp4
       react: 18.2.0
@@ -6986,7 +6982,6 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 7.32.0
-    dev: false
 
   /eslint-config-prettier/8.6.0_eslint@8.33.0:
     resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
@@ -7051,7 +7046,6 @@ packages:
       synckit: 0.8.5
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /eslint-import-resolver-typescript/3.5.3_ohdts44xlqyeyrlje4qnefqeay:
     resolution: {integrity: sha512-njRcKYBc3isE42LaTcJNVANR3R99H9bAxBDMNDr2W7yq5gYPxbU3MkdhsQukxZ/Xg9C2vcyLlDsbKfRDg0QvCQ==}

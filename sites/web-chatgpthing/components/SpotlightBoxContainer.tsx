@@ -93,8 +93,8 @@ const SpotlightBoxContainerBase: React.FC<
           isDisabled ||
           (Boolean(answer?.length) && answer.length !== defaultAnswer.length)
         }
-        isOnboarding={isOnboarding}
         isLoading={answer?.length > 0 && answer.length !== defaultAnswer.length}
+        isOnboarding={isOnboarding}
       />
       <Separator className="mt-4 mb-2" />
       <SpotlightFooter

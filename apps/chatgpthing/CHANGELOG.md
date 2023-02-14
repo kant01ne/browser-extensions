@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.0](https://github.com/kant01ne/browser-extensions/compare/chatgpthing-v0.0.4...chatgpthing-v0.1.0) (2023-02-14)
+
+
+### Features
+
+* **twitshorter:** Implementation of TwitShorter extension ([fc5ce7a](https://github.com/kant01ne/browser-extensions/commit/fc5ce7a45fbff79ca31770c4cc1088c5efe5143b))
+
+
+### Reverts
+
+* **chatgpthing:** workaround - add _browser to package.json for shortcut withD mv2 firefox ([5e169af](https://github.com/kant01ne/browser-extensions/commit/5e169af79e510b29fb2ec956f64d724810244411))
+
 ## [0.0.4](https://github.com/kant01ne/browser-extensions/compare/chatgpthing-v0.0.3...chatgpthing-v0.0.4) (2023-02-09)
 
 

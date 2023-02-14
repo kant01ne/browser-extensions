@@ -1,7 +1,7 @@
 {
   "name": "twitshorter",
   "displayName": "TwitShorter",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "description": "Long tweets summarizer",
   "author": "kant01ne",
   "scripts": {

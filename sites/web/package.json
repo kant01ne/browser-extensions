@@ -1,0 +1,41 @@
+{
+  "name": "web",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@next/font": "^13.1.6",
+    "@react-spring/parallax": "^9.6.1",
+    "@tailwindcss/typography": "^0.5.9",
+    "@vercel/analytics": "^0.1.8",
+    "chatgpthing": "workspace:*",
+    "clsx": "^1.2.1",
+    "next": "^13.1.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-wrap-balancer": "^0.4.0",
+    "tailwindcss-animate": "^1.0.5",
+    "ui": "workspace:*",
+    "usehooks-ts": "^2.9.1",
+    "utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@types/node": "^17.0.12",
+    "@types/react": "^18.0.22",
+    "@types/react-dom": "^18.0.7",
+    "autoprefixer": "^10.4.13",
+    "eslint": "7.32.0",
+    "eslint-config-custom": "workspace:*",
+    "postcss": "^8.4.21",
+    "tailwindcss": "^3.2.4",
+    "tsconfig": "workspace:*",
+    "typescript": "^4.9.4"
+  }
+}

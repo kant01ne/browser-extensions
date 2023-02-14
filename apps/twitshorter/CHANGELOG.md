@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.4](https://github.com/kant01ne/browser-extensions/compare/twitshorter-v0.0.1...twitshorter-v0.0.4) (2023-02-14)
+
+
+### Features
+
+* **twitshorter:** Implementation of TwitShorter extension ([fc5ce7a](https://github.com/kant01ne/browser-extensions/commit/fc5ce7a45fbff79ca31770c4cc1088c5efe5143b))
+
+
+### Miscellaneous Chores
+
+* **chatgpthing:** release 0.0.4 ([c85b6b2](https://github.com/kant01ne/browser-extensions/commit/c85b6b2c474cc8c45abed80ee50fc3045f956dcd))
+
 ## [0.0.4](https://github.com/kant01ne/browser-extensions/compare/chatgpthing-v0.0.3...chatgpthing-v0.0.4) (2023-02-09)
 
 

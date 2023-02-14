@@ -1,3 +1,4 @@
 {
-  "apps/chatgpthing": "0.0.4"
+  "apps/chatgpthing": "0.0.4",
+  "apps/twitshorter": "0.0.1"
 }

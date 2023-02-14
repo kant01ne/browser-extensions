@@ -1,5 +1,5 @@
 import { t } from "@/trpc"
-import { KEY_ACCESS_TOKEN } from "@/utils/chatGPT"
+import { KEY_ACCESS_TOKEN } from "chatgpt/chatGPT"
 import { getBrowserNameFromNavigatorTypeValues } from "utils/getBrowserNameFromNavigator"
 import { getExtensionShortcutURL } from "utils/getExtensionShortcutURL"
 import browser from "webextension-polyfill"

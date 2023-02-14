@@ -1,6 +1,5 @@
 const ExtensionPostMessageEventTypeValues = [
   "ChatGPThing:browserActionClicked",
-  "ChatGPThing:spotlight:show",
   "ChatGPThing:spotlight:setAnswer",
   "ChatGPThing:spotlight:toggle"
 ] as const
@@ -12,24 +11,17 @@ export type ExtensionPostMessageEvent = {
   origin: string
   data:
     | {
+        type: Extract<
+          ExtensionPostMessageEventType,
+          "ChatGPThing:spotlight:setAnswer"
+        >
+        payload: string
+      }
+    | {
         type: Exclude<
           ExtensionPostMessageEventType,
           "ChatGPThing:spotlight:setAnswer"
         >
-      }
-    | {
-        type: Extract<
-          ExtensionPostMessageEventType,
-          "ChatGPThing:spotlight:setAnswer"
-        >
-        payload: string
-      }
-    | {
-        type: Extract<
-          ExtensionPostMessageEventType,
-          "ChatGPThing:spotlight:setText"
-        >
-        payload: string
       }
 }
 

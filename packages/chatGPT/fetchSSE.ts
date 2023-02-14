@@ -1,6 +1,7 @@
-import { streamAsyncIterable } from "@/utils/streamAsyncIterable"
-import { createParser } from "eventsource-parser"
-import { isEmpty } from "lodash-es"
+import { ParseEvent, createParser } from "eventsource-parser"
+import isEmpty from "lodash-es/isEmpty"
+
+import { streamAsyncIterable } from "./streamAsyncIterable"
 
 export async function fetchSSE(
   resource: string,
@@ -16,11 +17,12 @@ export async function fetchSSE(
         : `${resp.status} ${resp.statusText}`
     )
   }
-  const parser = createParser((event) => {
+  const parser = createParser((event: ParseEvent) => {
     if (event.type === "event") {
       onMessage(event.data)
     }
   })
+  // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
   for await (const chunk of streamAsyncIterable(resp.body!)) {
     const str = new TextDecoder().decode(chunk)
     parser.feed(str)

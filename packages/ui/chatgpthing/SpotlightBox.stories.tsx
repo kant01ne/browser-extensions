@@ -7,6 +7,13 @@ import "../style/style.css"
 import type { Story } from "@ladle/react"
 import React from "react"
 
+import { ChatGPTAuth } from "../chatgpt/ChatGPTAuth"
+import { Separator } from "../separator"
+import { SpotlightAnswer } from "./SpotlightAnswer"
+import { SpotlightFooter } from "./SpotlightFooter"
+import { SpotlightForm } from "./SpotlightForm"
+import { SpotlightHeader } from "./SpotlightHeader"
+
 /*
  * Common.
  */
@@ -44,14 +51,73 @@ const argTypes = {
 }
 
 const getTemplate: () => Story<
-  React.ComponentPropsWithoutRef<typeof SpotlightBox>
-> = () => (props) => {
-  return (
-    <LadleBase>
-      <SpotlightBox {...props} />
-    </LadleBase>
-  )
-}
+  React.ComponentPropsWithoutRef<typeof SpotlightBox> &
+    React.ComponentProps<"div"> &
+    Pick<
+      React.ComponentPropsWithoutRef<typeof SpotlightForm>,
+      | "defaultPrompt"
+      | "placeholder"
+      | "handleSubmit"
+      | "isDisabled"
+      | "isAuthenticated"
+      | "isLoading"
+      | "isOnboarding"
+    > &
+    Pick<
+      React.ComponentPropsWithoutRef<typeof ChatGPTAuth>,
+      "handleAuthClick"
+    > &
+    Pick<
+      React.ComponentPropsWithoutRef<typeof SpotlightFooter>,
+      "handleShortcutUpdate"
+    > & {
+      answer?: string
+      shortcut?: string
+      className?: string
+      handleClose?: React.MouseEventHandler<HTMLButtonElement>
+    }
+> =
+  () =>
+  ({
+    answer,
+    className,
+    defaultPrompt,
+    handleAuthClick,
+    handleClose,
+    handleShortcutUpdate,
+    handleSubmit,
+    isDisabled,
+    isOnboarding,
+    isAuthenticated,
+    isLoading,
+    shortcut,
+    ...props
+  }) => {
+    return (
+      <LadleBase>
+        <SpotlightBox handleClose={handleClose} {...props}>
+          <SpotlightHeader />
+          <SpotlightAnswer answer={answer} />
+          <SpotlightForm
+            handleSubmit={handleSubmit}
+            isAuthenticated={isAuthenticated}
+            isLoading={isLoading}
+          />
+          <ChatGPTAuth
+            className="mt-4"
+            handleAuthClick={handleAuthClick}
+            isAuthenticated={isAuthenticated}
+          />
+          <Separator className="mt-4 mb-2" />
+          <SpotlightFooter
+            className="px-2 py-0.5 "
+            handleShortcutUpdate={handleShortcutUpdate}
+            shortcut={shortcut}
+          />
+        </SpotlightBox>
+      </LadleBase>
+    )
+  }
 
 /*
  * Default.
@@ -227,8 +293,46 @@ MiddleAnswer.argTypes = {
  * StreamingAnswer.
  */
 export const StreamingAnswer: Story<
-  React.ComponentPropsWithoutRef<typeof SpotlightBox>
-> = ({ answer: defaultAnswer, ...props }) => {
+  React.ComponentPropsWithoutRef<typeof SpotlightBox> &
+    React.ComponentProps<"div"> &
+    Pick<
+      React.ComponentPropsWithoutRef<typeof SpotlightForm>,
+      | "defaultPrompt"
+      | "placeholder"
+      | "handleSubmit"
+      | "isDisabled"
+      | "isAuthenticated"
+      | "isLoading"
+      | "isOnboarding"
+    > &
+    Pick<
+      React.ComponentPropsWithoutRef<typeof ChatGPTAuth>,
+      "handleAuthClick"
+    > &
+    Pick<
+      React.ComponentPropsWithoutRef<typeof SpotlightFooter>,
+      "handleShortcutUpdate"
+    > & {
+      answer?: string
+      shortcut?: string
+      className?: string
+      handleClose?: React.MouseEventHandler<HTMLButtonElement>
+    }
+> = ({
+  answer: defaultAnswer,
+  className,
+  defaultPrompt,
+  handleAuthClick,
+  handleClose,
+  handleShortcutUpdate,
+  handleSubmit,
+  isDisabled,
+  isOnboarding,
+  isAuthenticated,
+  isLoading,
+  shortcut,
+  ...props
+}) => {
   const [answer, setAnswer] = React.useState("")
   React.useEffect(() => {
     const interval = setInterval(() => {
@@ -240,7 +344,25 @@ export const StreamingAnswer: Story<
 
   return (
     <LadleBase>
-      <SpotlightBox answer={answer} {...props} />
+      <SpotlightBox handleClose={handleClose} {...props}>
+        <SpotlightHeader />
+        <SpotlightAnswer answer={answer} />
+        <SpotlightForm
+          handleSubmit={handleSubmit}
+          isAuthenticated={isAuthenticated}
+          isLoading={isLoading}
+        />
+        <ChatGPTAuth
+          handleAuthClick={handleAuthClick}
+          isAuthenticated={isAuthenticated}
+        />
+        <Separator className="mt-4 mb-2" />
+        <SpotlightFooter
+          className="px-2 py-0.5"
+          handleShortcutUpdate={handleShortcutUpdate}
+          shortcut={shortcut}
+        />
+      </SpotlightBox>
     </LadleBase>
   )
 }

@@ -86,7 +86,6 @@ const SpotlightBoxContainerBase: React.FC<
       <SpotlightHeader />
       <SpotlightAnswer answer={answer} />
       <SpotlightForm
-        isOnboarding={isOnboarding}
         defaultPrompt={prompt}
         handleSubmit={handleSubmit}
         isAuthenticated={true}
@@ -94,6 +93,7 @@ const SpotlightBoxContainerBase: React.FC<
           isDisabled ||
           (Boolean(answer?.length) && answer.length !== defaultAnswer.length)
         }
+        isOnboarding={isOnboarding}
         isLoading={answer?.length > 0 && answer.length !== defaultAnswer.length}
       />
       <Separator className="mt-4 mb-2" />

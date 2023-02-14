@@ -359,6 +359,63 @@ importers:
       tsconfig: link:../tsconfig
       typescript: 4.9.5
 
+  sites/web:
+    specifiers:
+      '@babel/core': ^7.0.0
+      '@next/font': ^13.1.6
+      '@react-spring/parallax': ^9.6.1
+      '@tailwindcss/aspect-ratio': ^0.4.2
+      '@tailwindcss/typography': ^0.5.9
+      '@types/node': ^17.0.12
+      '@types/react': ^18.0.22
+      '@types/react-dom': ^18.0.7
+      '@vercel/analytics': ^0.1.8
+      autoprefixer: ^10.4.13
+      chatgpthing: workspace:*
+      clsx: ^1.2.1
+      eslint: 7.32.0
+      eslint-config-custom: workspace:*
+      next: ^13.1.1
+      postcss: ^8.4.21
+      react: 18.2.0
+      react-dom: 18.2.0
+      react-wrap-balancer: ^0.4.0
+      tailwindcss: ^3.2.4
+      tailwindcss-animate: ^1.0.5
+      tsconfig: workspace:*
+      typescript: ^4.9.4
+      ui: workspace:*
+      usehooks-ts: ^2.9.1
+      utils: workspace:*
+    dependencies:
+      '@next/font': 13.1.6
+      '@react-spring/parallax': 9.6.1_biqbaboplfbrettd7655fr4n2y
+      '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
+      '@vercel/analytics': 0.1.8_react@18.2.0
+      chatgpthing: link:../../apps/chatgpthing
+      clsx: 1.2.1
+      next: 13.1.6_pjwopsidmaokadturxaafygjp4
+      react: 18.2.0
+      react-dom: 18.2.0_react@18.2.0
+      react-wrap-balancer: 0.4.0_react@18.2.0
+      tailwindcss-animate: 1.0.5_tailwindcss@3.2.4
+      ui: link:../../packages/ui
+      usehooks-ts: 2.9.1_biqbaboplfbrettd7655fr4n2y
+      utils: link:../../packages/utils
+    devDependencies:
+      '@babel/core': 7.20.12
+      '@tailwindcss/aspect-ratio': 0.4.2_tailwindcss@3.2.4
+      '@types/node': 17.0.45
+      '@types/react': 18.0.27
+      '@types/react-dom': 18.0.10
+      autoprefixer: 10.4.13_postcss@8.4.21
+      eslint: 7.32.0
+      eslint-config-custom: link:../../packages/eslint-config-custom
+      postcss: 8.4.21
+      tailwindcss: 3.2.4
+      tsconfig: link:../../packages/tsconfig
+      typescript: 4.9.5
+
   sites/web-chatgpthing:
     specifiers:
       '@babel/core': ^7.0.0
@@ -4710,6 +4767,14 @@ packages:
       defer-to-connect: 2.0.1
     dev: false
 
+  /@tailwindcss/aspect-ratio/0.4.2_tailwindcss@3.2.4:
+    resolution: {integrity: sha512-8QPrypskfBa7QIMuKHg2TA7BqES6vhBrDLOv8Unb6FcFyd3TjKbc6lcmb9UPQHxfl24sXoJ41ux/H7qQQvfaSQ==}
+    peerDependencies:
+      tailwindcss: '>=2.0.0 || >=3.0.0 || >=3.0.0-alpha.1'
+    dependencies:
+      tailwindcss: 3.2.4
+    dev: true
+
   /@tailwindcss/typography/0.5.9_tailwindcss@3.2.4:
     resolution: {integrity: sha512-t8Sg3DyynFysV9f4JDOVISGsjazNb48AeIYQwcL+Bsq5uf4RYL75C1giZ43KISjeDGBaTN3Kxh7Xj/vRSMJUUg==}
     peerDependencies:
@@ -6921,6 +6986,7 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 7.32.0
+    dev: false
 
   /eslint-config-prettier/8.6.0_eslint@8.33.0:
     resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
@@ -6985,6 +7051,7 @@ packages:
       synckit: 0.8.5
     transitivePeerDependencies:
       - supports-color
+    dev: false
 
   /eslint-import-resolver-typescript/3.5.3_ohdts44xlqyeyrlje4qnefqeay:
     resolution: {integrity: sha512-njRcKYBc3isE42LaTcJNVANR3R99H9bAxBDMNDr2W7yq5gYPxbU3MkdhsQukxZ/Xg9C2vcyLlDsbKfRDg0QvCQ==}

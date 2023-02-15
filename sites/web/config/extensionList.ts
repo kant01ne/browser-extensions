@@ -11,8 +11,10 @@ type ExtensionConfig = {
   links: {
     github: string
     twitter: string
-    youtube?: string
+    youtubeDemo?: string
+    youtubeOnboarding?: string
   }
+  onboarding?: string
   name: string
   longDescription: string
   description?: {
@@ -47,7 +49,8 @@ export const extensionListConfig: Record<extensionListType, ExtensionConfig> = {
   chatgpthing: {
     logo: chatGPThingLogo,
     links: {
-      youtube: "https://www.youtube.com/embed/g85b8V11adw",
+      youtubeDemo: "https://www.youtube.com/embed/g85b8V11adw",
+      youtubeOnboarding: "https://www.youtube.com/embed/g85b8V11adw",
       github:
         "https://github.com/kant01ne/browser-extensions/tree/main/apps/chatgpthing",
       twitter: "https://twitter.com/kant01ne"
@@ -84,7 +87,7 @@ export const extensionListConfig: Record<extensionListType, ExtensionConfig> = {
   },
   twitshorter: {
     links: {
-      youtube: "https://www.youtube.com/embed/fsQeWjex0Xg",
+      youtubeDemo: "https://www.youtube.com/embed/fsQeWjex0Xg",
 
       github:
         "https://github.com/kant01ne/browser-extensions/tree/main/apps/twitshorter",

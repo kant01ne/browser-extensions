@@ -2,7 +2,7 @@
   "name": "chatgpthing",
   "displayName": "ChatGPThing",
   "version": "0.1.1",
-  "description": "Long tweets summarizer",
+  "description": "Query ChatGPT in the context of the current page",
   "author": "kant01ne",
   "scripts": {
     "dev": "plasmo dev",
@@ -70,16 +70,6 @@
   "manifest": {
     "permissions": [
       "scripting"
-    ],
-    "web_accessible_resources": [
-      {
-        "matches": [
-          "<all_urls>"
-        ],
-        "resources": [
-          "tabs/spotlight.html"
-        ]
-      }
     ],
     "host_permissions": [
       "<all_urls>"

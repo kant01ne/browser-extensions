@@ -7,7 +7,7 @@ export const installListener = (
   if (details.reason === browser.runtime.OnInstalledReason.INSTALL) {
     browser.tabs
       .create({
-        url: "https://en.wikipedia.org/wiki/Artificial_intelligence"
+        url: "https://github.com/kant01ne/browser-extensions/tree/main/apps/chatgpthing#onboarding"
       })
       .then(async ({ id }) => {
         // Wait enough time for the page to load and then toggle the spotlight.

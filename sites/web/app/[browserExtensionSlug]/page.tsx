@@ -86,7 +86,7 @@ export default async function IndexPage({
                 margin: "0 auto",
                 overflow: "hidden"
               }}
-              src={site.links.youtube}
+              src={site.links.youtubeDemo}
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen></iframe>

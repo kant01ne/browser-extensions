@@ -45,3 +45,24 @@ This should create a production bundle for your extension, ready to be zipped an
 ## Submit to the webstores
 
 The easiest way to deploy your Plasmo extension is to use the built-in [bpp](https://bpp.browser.market) GitHub action. Prior to using this action however, make sure to build your extension and upload the first version to the store to establish the basic credentials. Then, simply follow [this setup instruction](https://docs.plasmo.com/framework/workflows/submit) and you should be on your way for automated submission!
+
+# Onboarding
+
+## Welcome to TwitShorter!
+
+Thanks for installing TwitShorter. This tool will help you summarize long twitter threads.
+
+## Authenticating with open AI
+
+To use the tool, you need to authenticate with Open AI. Click on the "link" in the box to login or signup to open AI.
+
+From time to time, you may need to re-authenticate with Open AI or pass Cloudflare checks. These limitations are imposed by open AI.
+You can do so by clicking on the "link" in the box.
+
+<video src="https://user-images.githubusercontent.com/5072452/219030098-11ff6461-ccfc-4a5e-ac9e-8f89805c63f0.mp4"></video>
+
+## Using the tool
+
+Once you are authenticated, you can start using the tool. simply open on any twitter threads and click on the Play button in the box to start summarizing long threads.
+
+<video src="https://user-images.githubusercontent.com/5072452/219025645-21fb44c0-3884-4079-8fb5-f5d413d8013c.mov"></video>

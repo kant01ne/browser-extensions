@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.5](https://github.com/kant01ne/browser-extensions/compare/web-v0.0.4...web-v0.0.5) (2023-02-15)
+
+
+### Bug Fixes
+
+* **twitshorter, chatgpthing:** Update onboardings using extensions readmes ([10a7dcd](https://github.com/kant01ne/browser-extensions/commit/10a7dcd6908cd95c02a3ba69cb38d97e88ca0541))
+
 ## [0.0.4](https://github.com/kant01ne/browser-extensions/compare/web-v0.0.1...web-v0.0.4) (2023-02-15)
 
 

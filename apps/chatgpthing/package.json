@@ -80,7 +80,7 @@
       }
     },
     "commands": {
-      "_execute_action": {
+      "_execute_browser_action": {
         "suggested_key": {
           "windows": "Alt+Z",
           "mac": "Alt+Z",

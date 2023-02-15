@@ -56,10 +56,11 @@ export const TwitShorterBoxContainer: React.FC<React.ComponentProps<"div">> = ({
       .filter(
         (element) =>
           // More Tweets section
-          !element.querySelector("h2") ||
-          // Promoted tweets.
-          !Array.from(element.querySelectorAll("div")).some(
-            (element) => element.innerText === "Promoted"
+          !(
+            element.querySelector("h2") ||
+            // Promoted tweets.
+            ("innerText" in element &&
+              (element as HTMLElement).innerText.endsWith("\nPromoted"))
           )
       )
       .map((element) => (element as HTMLDivElement).innerText)

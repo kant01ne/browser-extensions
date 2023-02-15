@@ -17,10 +17,12 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "lint": "turbo run lint",
     "package": "turbo run package",
+    "prepare": "husky install",
     "test": "turbo run test"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:0.0.0",
+    "husky": "^8.0.3",
     "prettier": "latest",
     "turbo": "latest"
   },

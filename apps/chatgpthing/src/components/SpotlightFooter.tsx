@@ -1,9 +1,8 @@
 import { clsx } from "clsx"
 import React from "react"
+import { Shortcut } from "ui/shortcut"
 import { getBrowserNameFromNavigator } from "utils/getBrowserNameFromNavigator"
 import { getExtensionShortcutURL } from "utils/getExtensionShortcutURL"
-
-import { Shortcut } from "../shortcut"
 
 export const SpotlightFooter: React.FC<
   React.ComponentProps<"a"> & {

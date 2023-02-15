@@ -1,13 +1,12 @@
 import { PlayCircle } from "lucide-react"
 import type React from "react"
-
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from "../Tooltip"
-import { Button } from "../button"
+} from "ui/Tooltip"
+import { Button } from "ui/button"
 
 export const TwitShorterPrimaryForm: React.FC<
   React.ComponentPropsWithoutRef<"span"> & {

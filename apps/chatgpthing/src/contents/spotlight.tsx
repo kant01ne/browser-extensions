@@ -1,10 +1,9 @@
 import { SpotlightBoxContainer } from "@/components/SpotlightBoxContainer"
-import { useTRPC, withTRPC } from "@/trpc/withTRPC"
+import { useTRPC, withTRPC } from "@/trpc/context"
 import {
   ExtensionPostMessageEvent,
   isExtensionPostMessageEvent
 } from "@/utils/ExtensionPostMessageEvent"
-// eslint-disable-next-line import/no-unresolved
 import cssText from "data-text:~/src/style.css"
 import type { PlasmoCSConfig, PlasmoGetStyle } from "plasmo"
 import React from "react"

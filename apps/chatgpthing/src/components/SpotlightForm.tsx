@@ -3,10 +3,9 @@ import { clsx } from "clsx"
 import { Loader2 } from "lucide-react"
 import React from "react"
 import { SubmitHandler, useForm } from "react-hook-form"
+import { Button } from "ui/button"
+import { Textarea } from "ui/textarea"
 import { z } from "zod"
-
-import { Button } from "../button"
-import { Textarea } from "../textarea"
 
 const promptSchema = z.object({
   prompt: z.string()

@@ -1,14 +1,13 @@
 import { clsx } from "clsx"
 import { RefreshCcw } from "lucide-react"
 import type React from "react"
-
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger
-} from "../Tooltip"
-import { Button } from "../button"
+} from "ui/Tooltip"
+import { Button } from "ui/button"
 
 export const TwitShorterSecondaryForm: React.FC<
   React.ComponentPropsWithoutRef<"button"> & {

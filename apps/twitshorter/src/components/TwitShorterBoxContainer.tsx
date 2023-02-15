@@ -1,18 +1,17 @@
-import { useTRPC } from "@/trpc/withTRPC"
+import { TwitShorterBox } from "@/components/TwitShorterBox"
+import { TwitShorterHeader } from "@/components/TwitShorterHeader"
+import { TwitShorterPrimaryForm } from "@/components/TwitShorterPrimaryForm"
+import { TwitShorterSecondaryForm } from "@/components/TwitShorterSecondaryForm"
+import { useTRPC } from "@/trpc/context"
 import {
   ExtensionPostMessageEvent,
   isExtensionPostMessageEvent
 } from "@/utils/ExtensionPostMessageEvent"
-// import { getDocumentTextFromDOM } from "@/utils/getDocumentTextFromDOM"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { clsx } from "clsx"
 import React from "react"
 import ReactMarkdown from "react-markdown"
 import { ChatGPTAuth } from "ui/chatgpt/ChatGPTAuth"
-import { TwitShorterBox } from "ui/twitShortr/TwitShorterBox"
-import { TwitShorterHeader } from "ui/twitShortr/TwitShorterHeader"
-import { TwitShorterPrimaryForm } from "ui/twitShortr/TwitShorterPrimaryForm"
-import { TwitShorterSecondaryForm } from "ui/twitShortr/TwitShorterSecondaryForm"
 
 export const TwitShorterBoxContainer: React.FC<React.ComponentProps<"div">> = ({
   className,
@@ -27,15 +26,17 @@ export const TwitShorterBoxContainer: React.FC<React.ComponentProps<"div">> = ({
    * Hooks.
    */
 
-  const { trpc, port } = useTRPC()
+  const { trpc, port } = useTRPC() || {}
+
+  if (!trpc || !port) {
+    return null
+  }
 
   /*
    * Queries.
    */
   const { data: isAuthenticated } = useQuery({
-    queryFn: async () => {
-      return await trpc.chatGPT.isAuthenticated.query()
-    },
+    queryFn: async () => trpc.chatGPT.isAuthenticated.query(),
     queryKey: ["isAuthenticated"]
   })
 
@@ -111,6 +112,7 @@ export const TwitShorterBoxContainer: React.FC<React.ComponentProps<"div">> = ({
   return (
     <TwitShorterBox className={clsx(className, "my-4")} {...props}>
       <ChatGPTAuth
+        className="mt-4"
         handleAuthClick={async (e) => {
           e.preventDefault()
           await trpc.browser.openOpenAIAuthPage.mutate()
@@ -141,7 +143,7 @@ export const TwitShorterBoxContainer: React.FC<React.ComponentProps<"div">> = ({
             />
           )}
           <ReactMarkdown className="dark:text-slate-100 dark:prose-invert prose [&>pre::-webkit-scrollbar]:!none max-w-prose pt-2 pb-2 [&>p]:!leading-snug">
-            {answer}
+            {answer || ""}
           </ReactMarkdown>
         </>
       ) : null}

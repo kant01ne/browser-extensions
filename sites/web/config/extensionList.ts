@@ -95,7 +95,7 @@ export const extensionListConfig: Record<extensionListType, ExtensionConfig> = {
       Firefox:
         "https://addons.mozilla.org/en-US/firefox/addon/twitshorter/?utm_source=landing",
       Chrome:
-        "https://chrome.google.com/webstore/detail/kdmhppbhoolbfkmfegijgkaffnpellhh/preview?hl=en&authuser=0&utm_source=landing"
+        "https://chrome.google.com/webstore/detail/kdmhppbhoolbfkmfegijgkaffnpellhh/?hl=en&authuser=0&utm_source=landing"
     },
     longDescription:
       "An open source browser extension to query ChatGPT with the current page context.",

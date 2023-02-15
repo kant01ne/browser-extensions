@@ -29,7 +29,7 @@ Long tweets summarizer
 
 [Website](https://browser-apps.vercel.app/chatgpthing&utm_source=github-repo)
 
-[Install on Chrome](https://chrome.google.com/webstore/detail/kdmhppbhoolbfkmfegijgkaffnpellhh/preview?hl=en&authuser=0&utm_source=github-repo)
+[Install on Chrome](https://chrome.google.com/webstore/detail/kdmhppbhoolbfkmfegijgkaffnpellhh/?hl=en&authuser=0&utm_source=github-repo)
 
 [Install on Firefox](https://addons.mozilla.org/en-US/firefox/addon/chatgpthing/?utm_source=github-repo)
 

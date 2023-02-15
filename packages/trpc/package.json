@@ -1,5 +1,5 @@
 {
-  "name": "chatgpt",
+  "name": "trpc",
   "version": "0.0.0",
   "main": "./index.tsx",
   "types": "./index.tsx",
@@ -9,11 +9,11 @@
   },
   "devDependencies": {
     "@types/lodash-es": "^4.17.6",
-    "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
+    "@types/react": "^18.0.17",
     "@types/uuid": "^9.0.0",
-    "eslint": "^7.32.0",
     "eslint-config-custom": "workspace:*",
+    "eslint": "^7.32.0",
     "react": "^18.2.0",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.4"
@@ -23,12 +23,11 @@
     "@tanstack/react-query": "^4.24.4",
     "@trpc/client": "^10.9.1",
     "@trpc/react-query": "^10.9.1",
+    "uuid": "^9.0.0",
     "@trpc/server": "^10.9.1",
-    "eventsource-parser": "^0.1.0",
-    "lodash-es": "^4.17.21",
+    "chatgpt": "workspace:*",
     "trpc-chrome": "^1.0.0",
     "utils": "workspace:*",
-    "uuid": "^9.0.0",
     "webextension-polyfill": "^0.10.0",
     "zod": "^3.20.2"
   }

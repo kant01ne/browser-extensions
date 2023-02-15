@@ -23,7 +23,7 @@ export default async function Head({
           property="og:url"
         />
         <meta
-          content={`https://browser-extensions.vercel.app/og/${browserExtensionSlug}.jpg`}
+          content={`https://browser-extensions.vercel.app/og/${browserExtensionSlug}.png`}
           property="og:image"
         />
         <meta content={site.name} name="twitter:title" />

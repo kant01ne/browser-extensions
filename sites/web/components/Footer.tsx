@@ -18,7 +18,7 @@ export function SiteFooter({
               href={extensionListConfig[browserExtensionSlug].links.twitter}
               rel="noreferrer"
               target="_blank">
-              kant01ne
+              kevant01ne
             </a>
             .
           </p>

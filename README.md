@@ -9,7 +9,7 @@ It uses built using the incredible browser extension platform [Plasmo](https://p
 > **Warning**
 > This monorepo serves as an example building one or multiple browser extensions.
 
-> If you see something broken, you can ping me [@kant01ne](https://twitter.com/kant01ne).
+> If you see something broken, you can ping me [@kevant01ne](https://twitter.com/kevant01ne).
 
 ## ChatGPThing
 

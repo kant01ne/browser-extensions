@@ -53,7 +53,7 @@ export const extensionListConfig: Record<extensionListType, ExtensionConfig> = {
       youtubeOnboarding: "https://www.youtube.com/embed/g85b8V11adw",
       github:
         "https://github.com/kant01ne/browser-extensions/tree/main/apps/chatgpthing",
-      twitter: "https://twitter.com/kant01ne"
+      twitter: "https://twitter.com/kevant01ne"
     },
     extensions: {
       Chrome:
@@ -91,7 +91,7 @@ export const extensionListConfig: Record<extensionListType, ExtensionConfig> = {
 
       github:
         "https://github.com/kant01ne/browser-extensions/tree/main/apps/twitshorter",
-      twitter: "https://twitter.com/kant01ne"
+      twitter: "https://twitter.com/kevant01ne"
     },
     name: "TwitShorter",
     extensions: {

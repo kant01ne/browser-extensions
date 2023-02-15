@@ -6,25 +6,10 @@ import { chromeLink } from "trpc-chrome/link"
 import { v4 as uuidv4 } from "uuid"
 import browser from "webextension-polyfill"
 
-export function getTRPCContext<TRouter extends AnyRouter>(): {
-  withTRPC: <TRouter extends AnyRouter>(
-    Component: React.FC
-  ) => <TRouter extends AnyRouter>() => JSX.Element
-  useTRPC: () => {
-    trpc?: ReturnType<typeof createTRPCProxyClient<TRouter>>
-    queryClient?: QueryClient
-    port?: browser.runtime.Port
-  }
-  TRPCProvider: React.FC<{
-    children: React.ReactNode
-    queryClient: QueryClient
-    trpc?: ReturnType<typeof createTRPCProxyClient<TRouter>>
-    port?: browser.runtime.Port
-  }>
-} {
+export function getTRPCContext<TRouter extends AnyRouter>() {
   const id = uuidv4()
   const withTRPC =
-    <TRouter extends AnyRouter>(Component: React.FC) =>
+    (Component: React.FC) =>
     <TRouter extends AnyRouter>(): JSX.Element => {
       /*
        * States.
@@ -80,5 +65,5 @@ export function getTRPCContext<TRouter extends AnyRouter>(): {
   }
 
   const useTRPC = (): TRPCProviderType => React.useContext(TRPCContext)
-  return { withTRPC, useTRPC, TRPCProvider }
+  return { useTRPC, withTRPC }
 }

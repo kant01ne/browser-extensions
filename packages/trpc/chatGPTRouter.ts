@@ -8,7 +8,7 @@ import {
   generateAnswers,
   generateAnswersController,
   getAccessToken
-} from "../../packages/chatgptss/chatGPT"
+} from "../chatgpt/chatGPT"
 import { t } from "./trpc"
 
 const storage = new PlasmoStorage()

@@ -15,9 +15,8 @@ module.exports = {
     "@typescript-eslint",
     "sort-keys-fix",
     "react",
-    "plugin:react-hooks/recommended",
     "browser-extensions"
-  ], //, "internal"
+  ],
   rules: {
     "@next/next/no-html-link-for-pages": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",

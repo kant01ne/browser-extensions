@@ -18,13 +18,19 @@ export const getStyle: PlasmoGetStyle = () => {
 }
 
 export const getInlineAnchor: PlasmoGetInlineAnchor = async () => {
-  await waitFor(() => document.querySelector('[data-testid="tweet"]'), {
-    count: 10,
-    delay: 200
-  })
+  await waitFor(
+    () =>
+      document.querySelector('[data-testid="tweet"]') &&
+      document.querySelector('[aria-label="Footer"]'),
+    {
+      count: 10,
+      delay: 200
+    }
+  )
 
   return (
-    document.querySelector('div:has(> [aria-label="Footer"])') || document.body
+    document.querySelector('[aria-label="Footer"]')?.parentElement ||
+    document.body
   )
 }
 
@@ -32,7 +38,18 @@ export const mountShadowHost: PlasmoMountShadowHost = ({
   shadowHost,
   anchor
 }) => {
-  anchor?.element.insertBefore(shadowHost, anchor.element.firstChild)
+  if (anchor?.element === document.body) {
+    return
+  }
+
+  if (!window.location.pathname.includes("/status")) {
+    return
+  }
+
+  anchor?.element.parentElement?.insertBefore(
+    shadowHost,
+    anchor.element.parentElement?.children[3]
+  )
 }
 
 export type PlasmoCSUIAnchor = {

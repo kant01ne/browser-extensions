@@ -13,6 +13,8 @@ module.exports = {
       },
       colors: {
         twitter: {
+          borderDark: "#2f3336",
+          borderLight: "#e6ecf0",
           black: "#14171A",
           blue: "#1DA1F2",
           darkGray: "#657786",

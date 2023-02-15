@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.6](https://github.com/kant01ne/browser-extensions/compare/twitshorter-v0.0.5...twitshorter-v0.0.6) (2023-02-15)
+
+
+### Bug Fixes
+
+* **twitshorter:** Fix anchor Fixes [#16](https://github.com/kant01ne/browser-extensions/issues/16) ([2eeba4d](https://github.com/kant01ne/browser-extensions/commit/2eeba4d317836523357027d6f02fea48bda54058))
+
 ## [0.0.5](https://github.com/kant01ne/browser-extensions/compare/twitshorter-v0.0.4...twitshorter-v0.0.5) (2023-02-14)
 
 

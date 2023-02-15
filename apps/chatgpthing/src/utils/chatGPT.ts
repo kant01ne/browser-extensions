@@ -1,6 +1,10 @@
 import type { ExtensionPostMessageEventType } from "@/utils/ExtensionPostMessageEvent"
-import { sendMessage, setConversationProperty } from "chatgpt/chatGPT"
 import type browser from "webextension-polyfill"
+
+import {
+  sendMessage,
+  setConversationProperty
+} from "../../packages/chatgptss/chatGPT"
 
 export let generateAnswersController: AbortController | undefined
 

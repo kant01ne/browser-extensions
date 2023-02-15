@@ -11,9 +11,6 @@ createChromeHandler({
   router: appRouter
 })
 
-/*
- * Browser action.
- */
 const handleActionClicked: Parameters<
   typeof browser.action.onClicked.addListener
 >[0] = async ({ id }) => toggleSpotlight(id)

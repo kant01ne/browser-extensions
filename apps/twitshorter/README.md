@@ -2,6 +2,12 @@
 
 Long tweets summarizer
 
+[Website](https://browser-apps.vercel.app/twitshorter&utm_source=github-repo)
+
+[Install on Chrome](https://chrome.google.com/webstore/detail/kdmhppbhoolbfkmfegijgkaffnpellhh/?hl=en&authuser=0&utm_source=github-repo)
+
+[Install on Firefox](https://addons.mozilla.org/en-US/firefox/addon/chatgpthing/?utm_source=github-repo)
+
 <video src="https://user-images.githubusercontent.com/5072452/218632182-9fb7eeba-d238-44ad-ae86-1c816c387ba7.mp4"></video>
 
 ## Contribution

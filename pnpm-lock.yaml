@@ -14,6 +14,7 @@ importers:
 
   apps/chatgpthing:
     specifiers:
+      '@hookform/resolvers': ^2.9.10
       '@ladle/react': ^2.5.2
       '@plasmohq/prettier-plugin-sort-imports': 3.6.1
       '@plasmohq/storage': ^1.0.0
@@ -44,15 +45,21 @@ importers:
       eventsource-parser: ^0.1.0
       expiry-map: ^2.0.0
       lodash-es: ^4.17.21
+      lucide-react: ^0.108.0
       plasmo: 0.64.2
       postcss: ^8.4.21
       prettier: 2.8.3
       react: 18.2.0
       react-dom: 18.2.0
+      react-hook-form: ^7.43.0
+      react-markdown: ^8.0.5
+      react-wrap-balancer: ^0.4.0
       tailwind-merge: ^1.9.0
       tailwindcss: ^3.2.4
       tailwindcss-animate: ^1.0.5
+      trpc: workspace:*
       trpc-chrome: ^1.0.0
+      tsconfig: workspace:*
       typescript: ^4.9.4
       ui: workspace:*
       utils: workspace:*
@@ -60,6 +67,7 @@ importers:
       webextension-polyfill: ^0.10.0
       zod: ^3.20.2
     dependencies:
+      '@hookform/resolvers': 2.9.10_react-hook-form@7.43.0
       '@plasmohq/storage': 1.0.4_react@18.2.0
       '@radix-ui/react-scroll-area': 1.0.2_biqbaboplfbrettd7655fr4n2y
       '@radix-ui/react-separator': 1.0.1_biqbaboplfbrettd7655fr4n2y
@@ -67,18 +75,24 @@ importers:
       '@trpc/client': 10.10.0_@trpc+server@10.10.0
       '@trpc/react-query': 10.10.0_5mhyv2iryamqlilh5gtjpyz23q
       '@trpc/server': 10.10.0
-      chatgpt: link:../../packages/chatGPT
+      chatgpt: link:../../packages/chatgpt
       class-variance-authority: 0.4.0_typescript@4.9.5
       clsx: 1.2.1
       eventsource-parser: 0.1.0
       expiry-map: 2.0.0
       lodash-es: 4.17.21
+      lucide-react: 0.108.0_react@18.2.0
       plasmo: 0.64.2_gjpyg5imi5mt2gbvkmn3a4dr7m
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
+      react-hook-form: 7.43.0_react@18.2.0
+      react-markdown: 8.0.5_3stiutgnnbnfnf3uowm5cip22i
+      react-wrap-balancer: 0.4.0_react@18.2.0
       tailwind-merge: 1.9.1
       tailwindcss-animate: 1.0.5_tailwindcss@3.2.4
+      trpc: link:../../packages/trpc
       trpc-chrome: 1.0.0_2a7aflczskeqccy5ulnfgozswm
+      tsconfig: link:../../packages/tsconfig
       ui: link:../../packages/ui
       utils: link:../../packages/utils
       uuid: 9.0.0
@@ -138,6 +152,7 @@ importers:
       eventsource-parser: ^0.1.0
       expiry-map: ^2.0.0
       lodash-es: ^4.17.21
+      lucide-react: ^0.108.0
       plasmo: 0.64.2
       postcss: ^8.4.21
       prettier: 2.8.3
@@ -147,7 +162,9 @@ importers:
       tailwind-merge: ^1.9.0
       tailwindcss: ^3.2.4
       tailwindcss-animate: ^1.0.5
+      trpc: workspace:*
       trpc-chrome: ^1.0.0
+      tsconfig: workspace:*
       typescript: ^4.9.4
       ui: workspace:*
       utils: workspace:*
@@ -162,18 +179,20 @@ importers:
       '@trpc/client': 10.10.0_@trpc+server@10.10.0
       '@trpc/react-query': 10.10.0_5mhyv2iryamqlilh5gtjpyz23q
       '@trpc/server': 10.10.0
-      chatgpt: link:../../packages/chatGPT
+      chatgpt: link:../../packages/chatgpt
       class-variance-authority: 0.4.0_typescript@4.9.5
       clsx: 1.2.1
       eventsource-parser: 0.1.0
       expiry-map: 2.0.0
       lodash-es: 4.17.21
+      lucide-react: 0.108.0_react@18.2.0
       plasmo: 0.64.2_gjpyg5imi5mt2gbvkmn3a4dr7m
       react: 18.2.0
       react-dom: 18.2.0_react@18.2.0
       react-markdown: 8.0.5_3stiutgnnbnfnf3uowm5cip22i
       tailwind-merge: 1.9.1
       tailwindcss-animate: 1.0.5_tailwindcss@3.2.4
+      trpc: link:../../packages/trpc
       trpc-chrome: 1.0.0_2a7aflczskeqccy5ulnfgozswm
       ui: link:../../packages/ui
       utils: link:../../packages/utils
@@ -200,11 +219,16 @@ importers:
       postcss: 8.4.21
       prettier: 2.8.3
       tailwindcss: 3.2.4
+      tsconfig: link:../../packages/tsconfig
       typescript: 4.9.5
 
-  packages/chatGPT:
+  packages/chatgpt:
     specifiers:
       '@plasmohq/storage': ^1.0.0
+      '@tanstack/react-query': ^4.24.4
+      '@trpc/client': ^10.9.1
+      '@trpc/react-query': ^10.9.1
+      '@trpc/server': ^10.9.1
       '@types/lodash-es': ^4.17.6
       '@types/react': ^18.0.17
       '@types/react-dom': ^18.0.6
@@ -214,23 +238,31 @@ importers:
       eventsource-parser: ^0.1.0
       lodash-es: ^4.17.21
       react: ^18.2.0
+      trpc-chrome: ^1.0.0
       tsconfig: workspace:*
       typescript: ^4.9.4
       utils: workspace:*
       uuid: ^9.0.0
       webextension-polyfill: ^0.10.0
+      zod: ^3.20.2
     dependencies:
       '@plasmohq/storage': 1.0.4_react@18.2.0
-      '@types/uuid': 9.0.0
+      '@tanstack/react-query': 4.24.4_biqbaboplfbrettd7655fr4n2y
+      '@trpc/client': 10.10.0_@trpc+server@10.10.0
+      '@trpc/react-query': 10.10.0_5mhyv2iryamqlilh5gtjpyz23q
+      '@trpc/server': 10.10.0
       eventsource-parser: 0.1.0
       lodash-es: 4.17.21
+      trpc-chrome: 1.0.0_2a7aflczskeqccy5ulnfgozswm
       utils: link:../utils
       uuid: 9.0.0
       webextension-polyfill: 0.10.0
+      zod: 3.20.2
     devDependencies:
       '@types/lodash-es': 4.17.6
       '@types/react': 18.0.27
       '@types/react-dom': 18.0.10
+      '@types/uuid': 9.0.0
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
       react: 18.2.0
@@ -247,6 +279,7 @@ importers:
       eslint-plugin-browser-extensions: workspace:*
       eslint-plugin-import: ^2.27.5
       eslint-plugin-react: ^7.32.2
+      eslint-plugin-react-hooks: ^4.6.0
       eslint-plugin-sort-keys-fix: ^1.1.2
       typescript: ^4.9.4
     dependencies:
@@ -258,6 +291,7 @@ importers:
       eslint-plugin-browser-extensions: link:../eslint-plugin-browser-extensions
       eslint-plugin-import: 2.27.5_3aa52m4yxoarnhkiex7tltyrnu
       eslint-plugin-react: 7.32.2_eslint@7.32.0
+      eslint-plugin-react-hooks: 4.6.0_eslint@7.32.0
       eslint-plugin-sort-keys-fix: 1.1.2
     devDependencies:
       typescript: 4.9.5
@@ -275,6 +309,51 @@ importers:
       ts-jest: 29.0.5_pstwkdtpyxhmewnvgcschskami
       ts-node: 10.9.1_rcvzjt2q3f6gordb34f5djrkie
       tsup: 6.5.0_6qtx7vkbdhwvdm4crzlegk4mvi
+
+  packages/trpc:
+    specifiers:
+      '@plasmohq/storage': ^1.0.0
+      '@tanstack/react-query': ^4.24.4
+      '@trpc/client': ^10.9.1
+      '@trpc/react-query': ^10.9.1
+      '@trpc/server': ^10.9.1
+      '@types/lodash-es': ^4.17.6
+      '@types/react': ^18.0.17
+      '@types/react-dom': ^18.0.6
+      '@types/uuid': ^9.0.0
+      chatgpt: workspace:*
+      eslint: ^7.32.0
+      eslint-config-custom: workspace:*
+      react: ^18.2.0
+      trpc-chrome: ^1.0.0
+      tsconfig: workspace:*
+      typescript: ^4.9.4
+      utils: workspace:*
+      uuid: ^9.0.0
+      webextension-polyfill: ^0.10.0
+      zod: ^3.20.2
+    dependencies:
+      '@plasmohq/storage': 1.0.4_react@18.2.0
+      '@tanstack/react-query': 4.24.4_biqbaboplfbrettd7655fr4n2y
+      '@trpc/client': 10.10.0_@trpc+server@10.10.0
+      '@trpc/react-query': 10.10.0_5mhyv2iryamqlilh5gtjpyz23q
+      '@trpc/server': 10.10.0
+      chatgpt: link:../chatgpt
+      trpc-chrome: 1.0.0_2a7aflczskeqccy5ulnfgozswm
+      utils: link:../utils
+      uuid: 9.0.0
+      webextension-polyfill: 0.10.0
+      zod: 3.20.2
+    devDependencies:
+      '@types/lodash-es': 4.17.6
+      '@types/react': 18.0.27
+      '@types/react-dom': 18.0.10
+      '@types/uuid': 9.0.0
+      eslint: 7.32.0
+      eslint-config-custom: link:../eslint-config-custom
+      react: 18.2.0
+      tsconfig: link:../tsconfig
+      typescript: 4.9.5
 
   packages/tsconfig:
     specifiers: {}
@@ -315,6 +394,7 @@ importers:
       '@radix-ui/react-tooltip': 1.0.3_5ndqzdd6t4rivxsukjv3i3ak2q
       '@tailwindcss/typography': 0.5.9_tailwindcss@3.2.4
       class-variance-authority: 0.4.0_typescript@4.9.5
+      lucide-react: 0.108.0_react@18.2.0
       react-hook-form: 7.43.0_react@18.2.0
       react-markdown: 8.0.5_3stiutgnnbnfnf3uowm5cip22i
       react-wrap-balancer: 0.4.0_react@18.2.0
@@ -328,7 +408,6 @@ importers:
       clsx: 1.2.1
       eslint: 7.32.0
       eslint-config-custom: link:../eslint-config-custom
-      lucide-react: 0.108.0_react@18.2.0
       postcss: 8.4.21
       react: 18.2.0
       tailwindcss: 3.2.4
@@ -5020,6 +5099,7 @@ packages:
 
   /@types/uuid/9.0.0:
     resolution: {integrity: sha512-kr90f+ERiQtKWMz5rP32ltJ/BtULDI5RVO0uavn1HQUOwjx0R1h0rnDYNL0CepF1zL5bSY6FISAfd9tOdDhU5Q==}
+    dev: true
 
   /@types/webextension-polyfill/0.10.0:
     resolution: {integrity: sha512-If4EcaHzYTqcbNMp/FdReVdRmLL/Te42ivnJII551bYjhX19bWem5m14FERCqdJA732OloGuxCRvLBvcMGsn4A==}
@@ -9350,7 +9430,7 @@ packages:
       react: ^16.5.1 || ^17.0.0 || ^18.0.0
     dependencies:
       react: 18.2.0
-    dev: true
+    dev: false
 
   /magic-string/0.25.9:
     resolution: {integrity: sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ==}

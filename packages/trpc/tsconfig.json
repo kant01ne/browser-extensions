@@ -3,7 +3,7 @@
   "include": ["."],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
-    "lib": ["es6", "dom", "es2017"],
+    "lib": ["es6", "dom", "es2017", "esnext"],
     "noLib": false,
     "baseUrl": "."
   }

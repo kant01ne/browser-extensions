@@ -1,10 +1,9 @@
 import { clsx } from "clsx"
 import React from "react"
 import ReactMarkdown from "react-markdown"
-
-import { Button } from "../button"
-import { ScrollArea } from "../scroll-area"
-import { RADIX_SCROLL_AREA_SELECTOR, Separator } from "../separator"
+import { Button } from "ui/button"
+import { ScrollArea } from "ui/scroll-area"
+import { RADIX_SCROLL_AREA_SELECTOR, Separator } from "ui/separator"
 
 export const SpotlightAnswer: React.FC<
   React.ComponentProps<"div"> & {

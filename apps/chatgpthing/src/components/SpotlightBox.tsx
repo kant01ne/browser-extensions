@@ -1,8 +1,7 @@
 import { clsx } from "clsx"
 import { X } from "lucide-react"
 import React from "react"
-
-import { Button } from "../button"
+import { Button } from "ui/button"
 
 // Shared base styles bu not applied directly to the component as we want to control its size from the containers.
 export const SpotlightBoxContainerClassName =

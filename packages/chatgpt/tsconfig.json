@@ -5,9 +5,6 @@
   "compilerOptions": {
     "lib": ["es6", "dom", "es2017", "esnext"],
     "noLib": false,
-    "paths": {
-      "~/*": ["./*"]
-    },
     "baseUrl": "."
   }
 }

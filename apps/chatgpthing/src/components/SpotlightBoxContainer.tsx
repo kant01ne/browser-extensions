@@ -1,4 +1,12 @@
-import { useTRPC } from "@/trpc/withTRPC"
+import { SpotlightAnswer } from "@/components/SpotlightAnswer"
+import {
+  SpotlightBox,
+  SpotlightBoxContainerClassName
+} from "@/components/SpotlightBox"
+import { SpotlightFooter } from "@/components/SpotlightFooter"
+import { SpotlightForm } from "@/components/SpotlightForm"
+import { SpotlightHeader } from "@/components/SpotlightHeader"
+import { useTRPC } from "@/trpc/context"
 import {
   ExtensionPostMessageEvent,
   isExtensionPostMessageEvent
@@ -8,14 +16,6 @@ import { useMutation, useQuery } from "@tanstack/react-query"
 import { clsx } from "clsx"
 import React from "react"
 import { ChatGPTAuth } from "ui/chatgpt/ChatGPTAuth"
-import { SpotlightAnswer } from "ui/chatgpthing/SpotlightAnswer"
-import {
-  SpotlightBox,
-  SpotlightBoxContainerClassName
-} from "ui/chatgpthing/SpotlightBox"
-import { SpotlightFooter } from "ui/chatgpthing/SpotlightFooter"
-import { SpotlightForm } from "ui/chatgpthing/SpotlightForm"
-import { SpotlightHeader } from "ui/chatgpthing/SpotlightHeader"
 import { Separator } from "ui/separator"
 import { getBrowserNameFromNavigator } from "utils/getBrowserNameFromNavigator"
 
@@ -36,6 +36,10 @@ export const SpotlightBoxContainer: React.FC<
    */
 
   const { trpc, port } = useTRPC()
+
+  if (!trpc || !port) {
+    return null
+  }
 
   /*
    * Queries.
@@ -60,7 +64,7 @@ export const SpotlightBoxContainer: React.FC<
   const getChatGPTAnswerMutation = useMutation({
     mutationFn: ({ prompt }: { prompt?: string }) =>
       trpc.chatGPT.getAnswer.mutate({
-        prompt: prompt?.length > 0 ? prompt : placeholder,
+        prompt: prompt && prompt?.length > 0 ? prompt : placeholder,
         text: getDocumentTextFromDOM()
       })
   })

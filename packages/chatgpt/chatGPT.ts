@@ -1,11 +1,57 @@
 import throttle from "lodash-es/throttle"
 import { v4 as uuidv4 } from "uuid"
+import type browser from "webextension-polyfill"
 
 import { Storage as PlasmoStorage } from "@plasmohq/storage"
 
 import { fetchSSE } from "./fetchSSE"
 
 const storage = new PlasmoStorage()
+
+export let generateAnswersController: AbortController | undefined
+
+export async function generateAnswers({
+  accessToken,
+  buildPayload,
+  port,
+  question
+}: {
+  port: browser.Runtime.Port
+  question: string
+  accessToken: string
+  buildPayload: (answer: string) => unknown
+}): Promise<void> {
+  let conversationID: string | undefined
+  const deleteConversation = () => {
+    if (conversationID) {
+      setConversationProperty(accessToken, conversationID, {
+        is_visible: false
+      })
+    }
+  }
+
+  generateAnswersController = new AbortController()
+  return await new Promise<undefined>((resolve, reject) => {
+    sendMessage({
+      onEvent(event) {
+        if (event.type === "done") {
+          deleteConversation()
+          return resolve(undefined)
+        }
+        port.postMessage({
+          data: buildPayload(event.data.text)
+        })
+        conversationID = event.data.conversationId
+      },
+      prompt: question.slice(0, 8000),
+      signal: generateAnswersController?.signal,
+      token: accessToken
+    }).catch((err) => {
+      deleteConversation()
+      reject(err)
+    })
+  })
+}
 
 export interface Answer {
   text: string

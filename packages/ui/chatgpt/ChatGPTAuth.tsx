@@ -5,7 +5,7 @@ export const ChatGPTAuth: React.FC<
     isAuthenticated?: boolean
     handleAuthClick?: React.MouseEventHandler<HTMLAnchorElement>
   }
-> = ({ className, handleAuthClick, isAuthenticated, ...props }) => {
+> = ({ handleAuthClick, isAuthenticated, ...props }) => {
   if (isAuthenticated !== false) {
     return null
   }

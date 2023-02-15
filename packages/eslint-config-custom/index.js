@@ -15,6 +15,7 @@ module.exports = {
     "@typescript-eslint",
     "sort-keys-fix",
     "react",
+    "plugin:react-hooks/recommended",
     "browser-extensions"
   ], //, "internal"
   rules: {

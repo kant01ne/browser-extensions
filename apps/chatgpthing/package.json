@@ -74,6 +74,11 @@
     "host_permissions": [
       "<all_urls>"
     ],
+    "browser_specific_settings": {
+      "gecko": {
+        "id": "$GECKO_ID"
+      }
+    },
     "commands": {
       "_execute_action": {
         "suggested_key": {

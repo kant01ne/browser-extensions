@@ -19,6 +19,15 @@
       "bumpPatchForMinorPreMajor": false,
       "changelogPath": "CHANGELOG.md",
       "versioning": "default"
+    },
+    "sites/web": {
+      "releaseType": "node",
+      "draft": false,
+      "prerelease": false,
+      "bumpMinorPreMajor": true,
+      "bumpPatchForMinorPreMajor": false,
+      "changelogPath": "CHANGELOG.md",
+      "versioning": "default"
     }
   }
 }

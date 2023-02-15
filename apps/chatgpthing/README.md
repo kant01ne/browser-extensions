@@ -52,9 +52,17 @@ The easiest way to deploy your Plasmo extension is to use the built-in [bpp](htt
 
 Thanks for installing Chatgpthing!
 
-To get started, use the keyboard shortcut (`Alt+Z` by default) to open the tool on any page. Try it here!
+To get started, use the keyboard shortcut (`Alt+Z` or `Option+Z` by default) to open the tool on any page. Try it here!
 
 <video src="https://user-images.githubusercontent.com/5072452/219022533-3c5f9465-b917-4347-8592-72e4cb7e997d.mov"></video>
+
+On Windows:
+
+<img src="https://user-images.githubusercontent.com/5072452/219045602-4d27db69-d076-43bc-a4d5-3e79dc5800d1.png" width="300" >
+
+On MacOS:
+
+<img src="https://user-images.githubusercontent.com/5072452/219045612-1868cca5-d885-4c25-8bfb-bab403a4562a.png" width="300" >
 
 You can easily update the keyboard shortcut if you prefer a different one:
 

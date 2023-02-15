@@ -1,14 +1,14 @@
-import {
-  KEY_ACCESS_TOKEN,
-  generateAnswers,
-  generateAnswersController,
-  getAccessToken
-} from "chatgpt/chatGPT"
 import type browser from "webextension-polyfill"
 import { z } from "zod"
 
 import { Storage as PlasmoStorage } from "@plasmohq/storage"
 
+import {
+  KEY_ACCESS_TOKEN,
+  generateAnswers,
+  generateAnswersController,
+  getAccessToken
+} from "../../packages/chatgptss/chatGPT"
 import { t } from "./trpc"
 
 const storage = new PlasmoStorage()

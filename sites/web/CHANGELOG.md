@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.6](https://github.com/kant01ne/browser-extensions/compare/web-v0.0.5...web-v0.0.6) (2023-02-15)
+
+
+### Bug Fixes
+
+* **web:** Fix OG image for twitshorter ([31f9f56](https://github.com/kant01ne/browser-extensions/commit/31f9f5686f3a56a22074616229e80de5ee342bfe))
+
 ## [0.0.5](https://github.com/kant01ne/browser-extensions/compare/web-v0.0.4...web-v0.0.5) (2023-02-15)
 
 

@@ -21,18 +21,21 @@ Query ChatGPT in the context of the current page
 
 [Install on Firefox](https://addons.mozilla.org/en-US/firefox/addon/chatgpthing/?utm_source=github-repo)
 
+[Onboarding](https://github.com/kant01ne/browser-extensions/tree/main/apps/chatgpthing#onboarding)
+
 <video src="https://user-images.githubusercontent.com/5072452/216819491-ae457647-6465-4fb8-864c-193a92dc1b48.mp4"></video>
 
 ## TwitShorter
 
 Long tweets summarizer
 
-[Website](https://browser-apps.vercel.app/chatgpthing&utm_source=github-repo)
+[Website](https://browser-apps.vercel.app/twitshorter&utm_source=github-repo)
 
 [Install on Chrome](https://chrome.google.com/webstore/detail/kdmhppbhoolbfkmfegijgkaffnpellhh/?hl=en&authuser=0&utm_source=github-repo)
 
-[Install on Firefox](https://addons.mozilla.org/en-US/firefox/addon/chatgpthing/?utm_source=github-repo)
+[Install on Firefox](https://addons.mozilla.org/en-US/firefox/addon/twitshorter/?utm_source=github-repo)
 
+[Onboarding](https://github.com/kant01ne/browser-extensions/tree/main/apps/twitshorter#onboarding)
 <video src="https://user-images.githubusercontent.com/5072452/218632182-9fb7eeba-d238-44ad-ae86-1c816c387ba7.mp4"></video>
 
 ## What's inside?

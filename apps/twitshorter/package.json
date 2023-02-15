@@ -33,6 +33,7 @@
     "tailwind-merge": "^1.9.0",
     "tailwindcss-animate": "^1.0.5",
     "trpc": "workspace:*",
+    "react-wrap-balancer": "^0.4.0",
     "trpc-chrome": "^1.0.0",
     "ui": "workspace:*",
     "utils": "workspace:*",

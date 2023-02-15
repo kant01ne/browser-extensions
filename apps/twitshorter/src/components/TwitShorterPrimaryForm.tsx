@@ -1,5 +1,6 @@
 import { PlayCircle } from "lucide-react"
 import type React from "react"
+import Balancer from "react-wrap-balancer"
 import {
   Tooltip,
   TooltipContent,
@@ -26,9 +27,10 @@ export const TwitShorterPrimaryForm: React.FC<
               <span className="sr-only">Summarize</span>
             </Button>
           </TooltipTrigger>
-          <TooltipContent>
-            <p>Start summarizing or</p>
-            <p>keep scrolling first</p>
+          <TooltipContent className="flex justify-center items-center">
+            <Balancer className="flex justify-center items-center w-[80%]">
+              Keep scrolling first or start summarizing thread now
+            </Balancer>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

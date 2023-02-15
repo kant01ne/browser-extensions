@@ -27,8 +27,8 @@ export const TwitShorterPrimaryForm: React.FC<
             </Button>
           </TooltipTrigger>
           <TooltipContent>
-            <p>Start summarizing or</p>
-            <p>keep scrolling first</p>
+            <p>Keep scrolling first...</p>
+            <p>or start summarizing thread now</p>
           </TooltipContent>
         </Tooltip>
       </TooltipProvider>

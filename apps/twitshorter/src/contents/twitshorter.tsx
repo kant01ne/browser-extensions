@@ -1,5 +1,11 @@
 import { TwitShorterBoxContainer } from "@/components/TwitShorterBoxContainer"
-import { withTRPC } from "@/trpc/context"
+import { useTRPC, withTRPC } from "@/trpc/context"
+import { AppRouter } from "@/trpc/router"
+import {
+  ExtensionPostMessageDataType,
+  ExtensionPostMessageEventType
+} from "@/utils/ExtensionPostMessageEvent"
+import { ChatGPTProvider } from "chatgpt/components/ChatGPTContext"
 import cssText from "data-text:~/src/style.css"
 // eslint-disable-next-line import/no-unresolved
 import type {
@@ -8,6 +14,7 @@ import type {
   PlasmoGetStyle,
   PlasmoMountShadowHost
 } from "plasmo"
+import React from "react"
 import { waitFor } from "utils/waitFor"
 
 export const getStyle: PlasmoGetStyle = () => {
@@ -61,4 +68,21 @@ export const config: PlasmoCSConfig = {
   matches: ["https://twitter.com/*/status/*"]
 }
 
-export default withTRPC(TwitShorterBoxContainer)
+function TwitShorter() {
+  const { port, trpc } = useTRPC()
+
+  return (
+    <ChatGPTProvider<
+      AppRouter,
+      ExtensionPostMessageEventType,
+      ExtensionPostMessageDataType
+    >
+      port={port}
+      postMessageDataType="twitShorter:setAnswer"
+      trpc={trpc}>
+      <TwitShorterBoxContainer />
+    </ChatGPTProvider>
+  )
+}
+
+export default withTRPC(TwitShorter)

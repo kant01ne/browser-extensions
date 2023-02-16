@@ -1,9 +1,13 @@
 import { SpotlightBoxContainer } from "@/components/SpotlightBoxContainer"
 import { useTRPC, withTRPC } from "@/trpc/context"
+import { AppRouter } from "@/trpc/router"
 import {
+  ExtensionPostMessageDataType,
   ExtensionPostMessageEvent,
+  ExtensionPostMessageEventType,
   isExtensionPostMessageEvent
 } from "@/utils/ExtensionPostMessageEvent"
+import { ChatGPTProvider } from "chatgpt/components/ChatGPTContext"
 import cssText from "data-text:~/src/style.css"
 import type { PlasmoCSConfig, PlasmoGetStyle } from "plasmo"
 import React from "react"
@@ -25,7 +29,7 @@ function Spotlight() {
    * State
    */
   const [isSpotlightOpen, setIsSpotlightOpen] = React.useState(false)
-  const { port } = useTRPC()
+  const { port, trpc } = useTRPC()
 
   /*
    * Callbacks.
@@ -62,7 +66,16 @@ function Spotlight() {
   }, [handleMessage, port.onMessage])
 
   return isSpotlightOpen ? (
-    <SpotlightBoxContainer handleClose={() => setIsSpotlightOpen(false)} />
+    <ChatGPTProvider<
+      AppRouter,
+      ExtensionPostMessageEventType,
+      ExtensionPostMessageDataType
+    >
+      port={port}
+      postMessageDataType="ChatGPThing:spotlight:setAnswer"
+      trpc={trpc}>
+      <SpotlightBoxContainer handleClose={() => setIsSpotlightOpen(false)} />
+    </ChatGPTProvider>
   ) : null
 }
 

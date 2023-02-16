@@ -1,6 +1,6 @@
 {
   "extends": "tsconfig/react-library.json",
-  "include": ["."],
+  "include": [".", "../chatgpt/trpc/chatGPTRouter.ts"],
   "exclude": ["dist", "build", "node_modules"],
   "compilerOptions": {
     "lib": ["es6", "dom", "es2017", "esnext"],

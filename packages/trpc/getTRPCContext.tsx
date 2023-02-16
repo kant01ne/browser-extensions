@@ -48,22 +48,23 @@ export function getTRPCContext<TRouter extends AnyRouter>() {
     }
 
   type TRPCProviderType = {
-    trpc?: ReturnType<typeof createTRPCProxyClient<TRouter>>
-    queryClient?: QueryClient
-    port?: browser.runtime.Port
+    trpc: ReturnType<typeof createTRPCProxyClient<TRouter>>
+    queryClient: QueryClient
+    port: browser.runtime.Port
   }
 
-  const TRPCContext = React.createContext<TRPCProviderType>({})
+  const TRPCContext = React.createContext<TRPCProviderType | null>(null)
 
   const TRPCProvider: React.FC<{
     children: React.ReactNode
     queryClient: QueryClient
-    trpc?: ReturnType<typeof createTRPCProxyClient<TRouter>>
-    port?: browser.runtime.Port
+    trpc: ReturnType<typeof createTRPCProxyClient<TRouter>>
+    port: browser.runtime.Port
   }> = ({ children, ...props }) => {
     return <TRPCContext.Provider value={props}>{children}</TRPCContext.Provider>
   }
 
-  const useTRPC = (): TRPCProviderType => React.useContext(TRPCContext)
+  const useTRPC = (): TRPCProviderType =>
+    React.useContext(TRPCContext as React.Context<TRPCProviderType>)
   return { useTRPC, withTRPC }
 }

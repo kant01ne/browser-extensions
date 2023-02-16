@@ -5,7 +5,7 @@ import { z } from "zod"
 
 import { Storage as PlasmoStorage } from "@plasmohq/storage"
 
-import { KEY_ACCESS_TOKEN } from "../chatgpt/chatGPT"
+import { KEY_ACCESS_TOKEN } from "../chatgpt/utils/chatGPT"
 import { t } from "./trpc"
 
 const storage = new PlasmoStorage()

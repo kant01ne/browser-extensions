@@ -1,3 +1,5 @@
+import { PostMessageEvent } from "utils/postMessageEvent"
+
 const ExtensionPostMessageEventTypeValues = [
   "ChatGPThing:browserActionClicked",
   "ChatGPThing:spotlight:setAnswer",
@@ -7,23 +9,25 @@ const ExtensionPostMessageEventTypeValues = [
 export type ExtensionPostMessageEventType =
   (typeof ExtensionPostMessageEventTypeValues)[number]
 
-export type ExtensionPostMessageEvent = {
-  origin: string
-  data:
-    | {
-        type: Extract<
-          ExtensionPostMessageEventType,
-          "ChatGPThing:spotlight:setAnswer"
-        >
-        payload: string
-      }
-    | {
-        type: Exclude<
-          ExtensionPostMessageEventType,
-          "ChatGPThing:spotlight:setAnswer"
-        >
-      }
-}
+export type ExtensionPostMessageDataType =
+  | {
+      type: Extract<
+        ExtensionPostMessageEventType,
+        "ChatGPThing:spotlight:setAnswer"
+      >
+      payload: string
+    }
+  | {
+      type: Exclude<
+        ExtensionPostMessageEventType,
+        "ChatGPThing:spotlight:setAnswer"
+      >
+    }
+
+export type ExtensionPostMessageEvent = PostMessageEvent<
+  ExtensionPostMessageDataType,
+  ExtensionPostMessageEventType
+>
 
 export function isExtensionPostMessageEvent(
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

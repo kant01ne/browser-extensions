@@ -26,6 +26,7 @@
     "@trpc/server": "^10.9.1",
     "eventsource-parser": "^0.1.0",
     "lodash-es": "^4.17.21",
+    "trpc": "workspace:*",
     "trpc-chrome": "^1.0.0",
     "utils": "workspace:*",
     "uuid": "^9.0.0",

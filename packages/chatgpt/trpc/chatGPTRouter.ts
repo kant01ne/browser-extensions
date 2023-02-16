@@ -1,3 +1,4 @@
+import { t } from "trpc/trpc"
 import type browser from "webextension-polyfill"
 import { z } from "zod"
 
@@ -8,8 +9,7 @@ import {
   generateAnswers,
   generateAnswersController,
   getAccessToken
-} from "../chatgpt/chatGPT"
-import { t } from "./trpc"
+} from "../utils/chatGPT"
 
 const storage = new PlasmoStorage()
 

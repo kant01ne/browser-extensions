@@ -242,6 +242,7 @@ importers:
       eventsource-parser: ^0.1.0
       lodash-es: ^4.17.21
       react: ^18.2.0
+      trpc: workspace:*
       trpc-chrome: ^1.0.0
       tsconfig: workspace:*
       typescript: ^4.9.4
@@ -257,6 +258,7 @@ importers:
       '@trpc/server': 10.10.0
       eventsource-parser: 0.1.0
       lodash-es: 4.17.21
+      trpc: link:../trpc
       trpc-chrome: 1.0.0_2a7aflczskeqccy5ulnfgozswm
       utils: link:../utils
       uuid: 9.0.0
@@ -325,7 +327,6 @@ importers:
       '@types/react': ^18.0.17
       '@types/react-dom': ^18.0.6
       '@types/uuid': ^9.0.0
-      chatgpt: workspace:*
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
       react: ^18.2.0
@@ -342,7 +343,6 @@ importers:
       '@trpc/client': 10.10.0_@trpc+server@10.10.0
       '@trpc/react-query': 10.10.0_5mhyv2iryamqlilh5gtjpyz23q
       '@trpc/server': 10.10.0
-      chatgpt: link:../chatgpt
       trpc-chrome: 1.0.0_2a7aflczskeqccy5ulnfgozswm
       utils: link:../utils
       uuid: 9.0.0
@@ -7066,7 +7066,6 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 7.32.0
-    dev: false
 
   /eslint-config-prettier/8.6.0_eslint@8.33.0:
     resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
@@ -7131,7 +7130,6 @@ packages:
       synckit: 0.8.5
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /eslint-import-resolver-typescript/3.5.3_ohdts44xlqyeyrlje4qnefqeay:
     resolution: {integrity: sha512-njRcKYBc3isE42LaTcJNVANR3R99H9bAxBDMNDr2W7yq5gYPxbU3MkdhsQukxZ/Xg9C2vcyLlDsbKfRDg0QvCQ==}

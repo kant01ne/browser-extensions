@@ -25,7 +25,6 @@
     "@trpc/react-query": "^10.9.1",
     "uuid": "^9.0.0",
     "@trpc/server": "^10.9.1",
-    "chatgpt": "workspace:*",
     "trpc-chrome": "^1.0.0",
     "utils": "workspace:*",
     "webextension-polyfill": "^0.10.0",

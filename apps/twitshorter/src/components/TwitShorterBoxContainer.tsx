@@ -26,11 +26,7 @@ export const TwitShorterBoxContainer: React.FC<React.ComponentProps<"div">> = ({
    * Hooks.
    */
 
-  const { trpc, port } = useTRPC() || {}
-
-  if (!trpc || !port) {
-    return null
-  }
+  const { trpc, port } = useTRPC()
 
   /*
    * Queries.

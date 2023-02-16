@@ -7,12 +7,9 @@ import { SpotlightFooter } from "@/components/SpotlightFooter"
 import { SpotlightForm } from "@/components/SpotlightForm"
 import { SpotlightHeader } from "@/components/SpotlightHeader"
 import { useTRPC } from "@/trpc/context"
-import {
-  ExtensionPostMessageEvent,
-  isExtensionPostMessageEvent
-} from "@/utils/ExtensionPostMessageEvent"
 import { getDocumentTextFromDOM } from "@/utils/getDocumentTextFromDOM"
 import { useMutation, useQuery } from "@tanstack/react-query"
+import { useChatGPT } from "chatgpt/components/ChatGPTContext"
 import { clsx } from "clsx"
 import React from "react"
 import { ChatGPTAuth } from "ui/chatgpt/ChatGPTAuth"
@@ -27,29 +24,15 @@ export const SpotlightBoxContainer: React.FC<
   }
 > = ({ handleClose, className, ...props }) => {
   /*
-   * State.
-   */
-  const [answer, setAnswer] = React.useState<string | undefined>(undefined)
-
-  /*
    * Hooks.
    */
 
-  const { trpc, port } = useTRPC()
-
-  if (!trpc || !port) {
-    return null
-  }
+  const { trpc } = useTRPC()
+  const { isAuthenticated, answer } = useChatGPT()
 
   /*
    * Queries.
    */
-  const { data: isAuthenticated } = useQuery({
-    queryFn: async () => {
-      return await trpc.chatGPT.isAuthenticated.query()
-    },
-    queryKey: ["isAuthenticated"]
-  })
 
   const { data: browserCommand } = useQuery({
     queryFn: async () => {
@@ -68,39 +51,6 @@ export const SpotlightBoxContainer: React.FC<
         text: getDocumentTextFromDOM()
       })
   })
-
-  /*
-   * Callbacks.
-   */
-  const handleMessage = React.useCallback(
-    (event: ExtensionPostMessageEvent | object) => {
-      if (!isExtensionPostMessageEvent(event)) {
-        return
-      }
-
-      switch (event.data?.type) {
-        case "ChatGPThing:spotlight:setAnswer": {
-          setAnswer(event.data.payload)
-          break
-        }
-        default:
-          break
-      }
-    },
-    []
-  )
-
-  /*
-   * Effects.
-   */
-  React.useEffect(() => {
-    window.addEventListener("message", handleMessage)
-    port.onMessage.addListener(handleMessage)
-    return () => {
-      window.removeEventListener("message", handleMessage)
-      port.onMessage.addListener(handleMessage)
-    }
-  }, [handleMessage, port.onMessage])
 
   /*
    * Render.

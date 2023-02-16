@@ -1,6 +1,6 @@
 import type { ExtensionPostMessageEventType } from "@/utils/ExtensionPostMessageEvent"
+import { getChatGPTRouter } from "chatgpt/trpc/chatGPTRouter"
 import { browserRouter } from "trpc/browserRouter"
-import { getChatGPTRouter } from "trpc/chatGPTRouter"
 import { t } from "trpc/trpc"
 
 export const appRouter = t.router({

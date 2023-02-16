@@ -3,11 +3,8 @@ import { TwitShorterHeader } from "@/components/TwitShorterHeader"
 import { TwitShorterPrimaryForm } from "@/components/TwitShorterPrimaryForm"
 import { TwitShorterSecondaryForm } from "@/components/TwitShorterSecondaryForm"
 import { useTRPC } from "@/trpc/context"
-import {
-  ExtensionPostMessageEvent,
-  isExtensionPostMessageEvent
-} from "@/utils/ExtensionPostMessageEvent"
-import { useMutation, useQuery } from "@tanstack/react-query"
+import { useMutation } from "@tanstack/react-query"
+import { useChatGPT } from "chatgpt/components/ChatGPTContext"
 import { clsx } from "clsx"
 import React from "react"
 import ReactMarkdown from "react-markdown"
@@ -18,24 +15,12 @@ export const TwitShorterBoxContainer: React.FC<React.ComponentProps<"div">> = ({
   ...props
 }) => {
   /*
-   * State.
-   */
-  const [answer, setAnswer] = React.useState<string | undefined>(undefined)
-
-  /*
    * Hooks.
    */
 
-  const { trpc, port } = useTRPC()
+  const { trpc } = useTRPC()
 
-  /*
-   * Queries.
-   */
-  const { data: isAuthenticated } = useQuery({
-    queryFn: async () => trpc.chatGPT.isAuthenticated.query(),
-    queryKey: ["isAuthenticated"]
-  })
-
+  const { isAuthenticated, answer } = useChatGPT()
   /*
    * Mutations.
    */
@@ -68,39 +53,6 @@ export const TwitShorterBoxContainer: React.FC<React.ComponentProps<"div">> = ({
 
     getChatGPTAnswerMutation.mutate({ text })
   }, [getChatGPTAnswerMutation])
-
-  /*
-   * Callbacks.
-   */
-  const handleMessage = React.useCallback(
-    (event: ExtensionPostMessageEvent | object) => {
-      if (!isExtensionPostMessageEvent(event)) {
-        return
-      }
-
-      switch (event.data?.type) {
-        case "twitShorter:setAnswer": {
-          setAnswer(event.data.payload)
-          break
-        }
-        default:
-          break
-      }
-    },
-    []
-  )
-
-  /*
-   * Effects.
-   */
-  React.useEffect(() => {
-    window.addEventListener("message", handleMessage)
-    port.onMessage.addListener(handleMessage)
-    return () => {
-      window.removeEventListener("message", handleMessage)
-      port.onMessage.addListener(handleMessage)
-    }
-  }, [handleMessage, port.onMessage])
 
   const [hasSubmited, setHasSubmited] = React.useState(false)
   /*

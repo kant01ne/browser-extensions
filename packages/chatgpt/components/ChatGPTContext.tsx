@@ -6,14 +6,12 @@ import type { getTRPCContext } from "trpc/getTRPCContext"
 import type { PostMessageEvent } from "utils/postMessageEvent"
 import browser from "webextension-polyfill"
 
-export type ChatGPTContext = {
+export type ChatGPTContextValue = {
   answer: string | undefined
   isAuthenticated: boolean | undefined
 }
 
-type ChatGPTContextValue = ChatGPTContext
-
-const defaultContext: ChatGPTContext = {
+const defaultContext: ChatGPTContextValue = {
   answer: undefined,
   isAuthenticated: undefined
 }
@@ -45,7 +43,7 @@ export function ChatGPTProvider<
   /*
    * State.
    */
-  const [value, setValue] = React.useState<ChatGPTContext>(defaultContext)
+  const [value, setValue] = React.useState<ChatGPTContextValue>(defaultContext)
 
   const setAnswer = React.useCallback(
     (answer: string | undefined) => {
@@ -85,7 +83,7 @@ export function ChatGPTProvider<
           break
       }
     },
-    [setAnswer]
+    [setAnswer, postMessageDataType]
   )
 
   /*

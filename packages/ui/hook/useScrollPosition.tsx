@@ -6,7 +6,6 @@ export const useScrollPosition = (): number => {
 
   React.useEffect(() => {
     const updatePosition = () => {
-      console.log(window)
       setScrollPosition(window.pageYOffset)
     }
     window.addEventListener("scroll", updatePosition)

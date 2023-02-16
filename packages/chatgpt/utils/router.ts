@@ -1,5 +1,6 @@
-import { getChatGPTRouter } from "chatgpt/trpc/chatGPTRouter"
 import { t } from "trpc/trpc"
+
+import { getChatGPTRouter } from "../trpc/chatGPTRouter"
 
 export const chatGPTRouter = t.router({
   chatGPT: getChatGPTRouter({

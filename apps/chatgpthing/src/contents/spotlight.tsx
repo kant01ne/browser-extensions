@@ -8,7 +8,8 @@ import {
   isExtensionPostMessageEvent
 } from "@/utils/ExtensionPostMessageEvent"
 import { ChatGPTProvider } from "chatgpt/components/ChatGPTContext"
-import cssText from "data-text:~/src/style.css"
+// eslint-disable-next-line import/no-unresolved
+import cssText from "data-text:~/src/style/style.css"
 import type { PlasmoCSConfig, PlasmoGetStyle } from "plasmo"
 import React from "react"
 
@@ -20,7 +21,7 @@ export const getStyle: PlasmoGetStyle = () => {
 }
 
 export const config: PlasmoCSConfig = {
-  css: ["../font.css"],
+  css: ["../style/font.css"],
   matches: ["<all_urls>"]
 }
 
@@ -28,6 +29,7 @@ function Spotlight() {
   /*
    * State
    */
+
   const [isSpotlightOpen, setIsSpotlightOpen] = React.useState(false)
   const { port, trpc } = useTRPC()
 

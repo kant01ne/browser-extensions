@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/kant01ne/browser-extensions/compare/chatgpthing-v0.1.2...chatgpthing-v0.1.3) (2023-02-16)
+
+
+### Reverts
+
+* **chatgpthing:** temporarily update package.json manifest key for _execute_action while releasing to firefox ([99c72cb](https://github.com/kant01ne/browser-extensions/commit/99c72cbbac4c6aa3fda09036dd78db91b5af3623))
+
 ## [0.1.2](https://github.com/kant01ne/browser-extensions/compare/chatgpthing-v0.1.1...chatgpthing-v0.1.2) (2023-02-15)
 
 

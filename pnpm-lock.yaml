@@ -40,6 +40,7 @@ importers:
       class-variance-authority: ^0.4.0
       clsx: ^1.2.1
       eslint: ^8.33.0
+      eslint-config-custom: workspace:*
       eslint-config-prettier: ^8.6.0
       eslint-import-resolver-typescript: ^3.5.3
       eslint-plugin-import: ^2.27.5
@@ -115,6 +116,7 @@ importers:
       '@typescript-eslint/parser': 5.50.0_4vsywjlpuriuw3tl5oq6zy5a64
       autoprefixer: 10.4.13_postcss@8.4.21
       eslint: 8.33.0
+      eslint-config-custom: link:../../packages/eslint-config-custom
       eslint-config-prettier: 8.6.0_eslint@8.33.0
       eslint-import-resolver-typescript: 3.5.3_ohdts44xlqyeyrlje4qnefqeay
       eslint-plugin-import: 2.27.5_nowqz4jutkd4a233czbfk7jsgu
@@ -149,6 +151,7 @@ importers:
       class-variance-authority: ^0.4.0
       clsx: ^1.2.1
       eslint: ^8.33.0
+      eslint-config-custom: workspace:*
       eslint-config-prettier: ^8.6.0
       eslint-import-resolver-typescript: ^3.5.3
       eslint-plugin-import: ^2.27.5
@@ -219,6 +222,7 @@ importers:
       '@typescript-eslint/parser': 5.50.0_4vsywjlpuriuw3tl5oq6zy5a64
       autoprefixer: 10.4.13_postcss@8.4.21
       eslint: 8.33.0
+      eslint-config-custom: link:../../packages/eslint-config-custom
       eslint-config-prettier: 8.6.0_eslint@8.33.0
       eslint-import-resolver-typescript: 3.5.3_ohdts44xlqyeyrlje4qnefqeay
       eslint-plugin-import: 2.27.5_nowqz4jutkd4a233czbfk7jsgu
@@ -5291,7 +5295,7 @@ packages:
       '@babel/plugin-transform-react-jsx-source': 7.19.6_@babel+core@7.20.12
       magic-string: 0.27.0
       react-refresh: 0.14.0
-      vite: 4.1.1_@types+node@18.11.18
+      vite: 4.1.1
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7073,7 +7077,6 @@ packages:
       eslint: '>=7.0.0'
     dependencies:
       eslint: 7.32.0
-    dev: false
 
   /eslint-config-prettier/8.6.0_eslint@8.33.0:
     resolution: {integrity: sha512-bAF0eLpLVqP5oEVUFKpMA+NnRFICwn9X8B5jrR9FcqnYBuPbqWEjTEspPWMj5ye6czoSLDweCzSo3Ko7gGrZaA==}
@@ -7138,7 +7141,6 @@ packages:
       synckit: 0.8.5
     transitivePeerDependencies:
       - supports-color
-    dev: false
 
   /eslint-import-resolver-typescript/3.5.3_ohdts44xlqyeyrlje4qnefqeay:
     resolution: {integrity: sha512-njRcKYBc3isE42LaTcJNVANR3R99H9bAxBDMNDr2W7yq5gYPxbU3MkdhsQukxZ/Xg9C2vcyLlDsbKfRDg0QvCQ==}

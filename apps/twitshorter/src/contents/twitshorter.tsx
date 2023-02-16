@@ -6,8 +6,8 @@ import {
   ExtensionPostMessageEventType
 } from "@/utils/ExtensionPostMessageEvent"
 import { ChatGPTProvider } from "chatgpt/components/ChatGPTContext"
-import cssText from "data-text:~/src/style.css"
 // eslint-disable-next-line import/no-unresolved
+import cssText from "data-text:~/src/style.css"
 import type {
   PlasmoCSConfig,
   PlasmoGetInlineAnchor,
@@ -65,7 +65,7 @@ export type PlasmoCSUIAnchor = {
 
 export const config: PlasmoCSConfig = {
   all_frames: true,
-  matches: ["https://twitter.com/*/status/*"]
+  matches: ["https://twitter.com/*"]
 }
 
 function TwitShorter() {

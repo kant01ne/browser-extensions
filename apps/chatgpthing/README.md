@@ -2,7 +2,7 @@
 
 Query ChatGPT in the context of the current page
 
-[Website](https://browser-apps.vercel.app/chatgpthing&utm_source=github-repo)
+[Website](https://browser-apps.vercel.app/chatgpthing?utm_source=github-repo)
 
 [Install on Chrome](https://chrome.google.com/webstore/detail/chatgpthing/amiibkaljanlkpjljhlkgjdfemgkklbo?hl=en&authuser=0&utm_source=github-repo)
 

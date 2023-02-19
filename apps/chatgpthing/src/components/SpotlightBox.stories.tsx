@@ -1,14 +1,14 @@
 /* eslint-disable no-console */
 import { SpotlightBox } from "./SpotlightBox"
 
-import "../style/font.css"
-import "../style/style.css"
+import "@/style/font.css"
+import "@/style/style.css"
 
 import type { Story } from "@ladle/react"
 import React from "react"
+import { ChatGPTAuth } from "ui/chatgpt/ChatGPTAuth"
+import { Separator } from "ui/separator"
 
-import { ChatGPTAuth } from "../chatgpt/ChatGPTAuth"
-import { Separator } from "../separator"
 import { SpotlightAnswer } from "./SpotlightAnswer"
 import { SpotlightFooter } from "./SpotlightFooter"
 import { SpotlightForm } from "./SpotlightForm"

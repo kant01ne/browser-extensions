@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.7](https://github.com/kant01ne/browser-extensions/compare/web-v0.0.6...web-v0.0.7) (2023-02-16)
+
+
+### Bug Fixes
+
+* **web:** Update twitter handle ([7835415](https://github.com/kant01ne/browser-extensions/commit/78354150899ef536322794ddc8866feaf4850ca8))
+
 ## [0.0.6](https://github.com/kant01ne/browser-extensions/compare/web-v0.0.5...web-v0.0.6) (2023-02-15)
 
 

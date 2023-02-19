@@ -4,7 +4,7 @@ import { AnyRouter } from "@trpc/server"
 import React from "react"
 import type { getTRPCContext } from "trpc/getTRPCContext"
 import type { PostMessageEvent } from "utils/postMessageEvent"
-import browser from "webextension-polyfill"
+import { Runtime } from "webextension-polyfill"
 
 export type ChatGPTContextValue = {
   answer: string | undefined
@@ -37,7 +37,7 @@ export function ChatGPTProvider<
 }: {
   children: React.ReactNode
   postMessageDataType: PostMessageDataTypeValue
-  port: browser.runtime.Port
+  port: Runtime.Port
   trpc: TRPCType<AppRouter>
 }): JSX.Element {
   /*

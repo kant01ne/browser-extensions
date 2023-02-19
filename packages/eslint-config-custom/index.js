@@ -29,7 +29,6 @@ module.exports = {
     "browser-extensions/no-new-storage": "error",
     "import/no-named-as-default-member": "off",
     "no-console": "error",
-
     "no-debugger": "error",
     "no-restricted-imports": [
       "error",

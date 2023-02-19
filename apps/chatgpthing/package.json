@@ -5,6 +5,7 @@
   "description": "Query ChatGPT in the context of the current page",
   "author": "kant01ne",
   "scripts": {
+    "lint": "eslint --ext .ts,.tsx,.js,.jsx ./src",
     "dev": "plasmo dev",
     "build": "plasmo build",
     "build:firefox": "plasmo build --target=firefox",
@@ -60,6 +61,7 @@
     "eslint": "^8.33.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-import-resolver-typescript": "^3.5.3",
+    "eslint-config-custom": "workspace:*",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-sort-keys-fix": "^1.1.2",

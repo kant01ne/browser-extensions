@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.8](https://github.com/kant01ne/browser-extensions/compare/twitshorter-v0.0.7...twitshorter-v0.0.8) (2023-02-16)
+
+
+### Bug Fixes
+
+* **twitshorter:** Fix promoted tweets included in prompt ([7638529](https://github.com/kant01ne/browser-extensions/commit/7638529b3a0b01312b887418feafbd87a599c6a6))
+
 ## [0.0.7](https://github.com/kant01ne/browser-extensions/compare/twitshorter-v0.0.6...twitshorter-v0.0.7) (2023-02-15)
 
 

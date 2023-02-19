@@ -1,7 +1,7 @@
 {
   "name": "twitshorter",
   "displayName": "TwitShorter",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Summarize long tweets in context",
   "author": "kant01ne",
   "scripts": {

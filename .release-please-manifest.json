@@ -1,5 +1,5 @@
 {
-  "apps/chatgpthing": "0.1.2",
+  "apps/chatgpthing": "0.1.3",
   "apps/twitshorter": "0.0.8",
   "sites/web": "0.0.7"
 }
